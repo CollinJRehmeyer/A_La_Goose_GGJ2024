@@ -19,7 +19,7 @@ public class ResumeStack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //TryAddPagesToStack(startingPages);
+        TryAddPagesToStack(startingPages);
     }
 
     // Update is called once per frame
@@ -27,7 +27,11 @@ public class ResumeStack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            AddPageToStack();
+            TryAddPagesToStack(1);
+        }
+        if (canAdd)
+        {
+            AddPagesFromQueue();
         }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -157,6 +161,7 @@ public class ResumeStack : MonoBehaviour
         Vector3 endPos = pageToMove.transform.position + new Vector3(0, .2f, 0);
         Quaternion startRot = pageToMove.transform.rotation;
         Quaternion endRot = Quaternion.Euler(-35, -15, 0);
+        canAdd = false;
 
 
         while (elapsedTime < timeToMove)
@@ -201,6 +206,7 @@ public class ResumeStack : MonoBehaviour
         // Ensure the object reaches the final position
         pageToMove.transform.position = endPos;
         pageToMove.transform.rotation = endRot;
+        canAdd = true;
         canHighlight = true;
     }
 }
