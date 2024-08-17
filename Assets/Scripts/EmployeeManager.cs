@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,7 +31,6 @@ public class EmployeeManager : MonoBehaviour
 
 
 
-    [Range(0, 10)]
     public int selectedEmployee;
 
     private void Start()
@@ -46,7 +46,8 @@ public class EmployeeManager : MonoBehaviour
         {
             if (selectedEmployee < employees.Count)
             {
-                employees.RemoveAt(selectedEmployee);
+                //employees.RemoveAt(selectedEmployee);
+                RemoveEmployee(employees[selectedEmployee]);
             }
             fire = false;
 
@@ -129,16 +130,35 @@ public class EmployeeManager : MonoBehaviour
         employees.Add(e);
         GameObject empBtn = Instantiate(employeeBtnPrefab, employeeGrid.transform);
         EmployeeButton empBtnComp = empBtn.GetComponent<EmployeeButton>();
+        employeeButtons.Add(empBtn);
         empBtnComp.employee = e;
         empBtnComp.employeeIndex = index;
         empBtnComp.GetComponentInChildren<Text>().text = index.ToString();
 
     }
 
+    public void RemoveEmployee(Employee e)
+    {
+        foreach(GameObject empBtn in employeeButtons)
+        {
+            if(empBtn.TryGetComponent<EmployeeButton>(out EmployeeButton empBtnComp))
+            {
+                if(empBtnComp.employee == e)
+                {
+                    Destroy(empBtn);
+                    employees.Remove(e);
+                    return;
+                }
+            }
+        }
+        
+    }
+
+
 
     public void Hire()
     {
-        employees.Add(new Employee());
+        AddEmployee(new Employee(), employees.Count);
     }
 
     private void PrintEmployees()
