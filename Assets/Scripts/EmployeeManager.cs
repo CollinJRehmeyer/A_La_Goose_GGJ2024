@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class EmployeeManager : MonoBehaviour
 {
     public List<Employee> employees = new List<Employee>();
+    public List<GameObject> employeeButtons = new List<GameObject>();
+    public GameObject employeeGrid;
+    public GameObject employeeBtnPrefab;
 
     public float totalProd;
     public float prodGoal = 100;
@@ -117,9 +120,22 @@ public class EmployeeManager : MonoBehaviour
     {
         for (int i = 0; i < numStartEmployees; i++)
         {
-            employees.Add(new Employee());
+            AddEmployee(new Employee(), i);
         }
     }
+
+    private void AddEmployee(Employee e, int index)
+    {
+        employees.Add(e);
+        GameObject empBtn = Instantiate(employeeBtnPrefab, employeeGrid.transform);
+        EmployeeButton empBtnComp = empBtn.GetComponent<EmployeeButton>();
+        empBtnComp.employee = e;
+        empBtnComp.employeeIndex = index;
+        empBtnComp.GetComponentInChildren<Text>().text = index.ToString();
+
+    }
+
+
     public void Hire()
     {
         employees.Add(new Employee());

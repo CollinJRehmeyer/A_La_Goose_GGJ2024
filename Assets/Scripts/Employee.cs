@@ -1,10 +1,12 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Net.Cache;
 using UnityEngine;
 
+[Serializable]
 public class Employee
 {
     public string name;
@@ -39,10 +41,10 @@ public class Employee
     {
         name = RandomName();
 
-        salary = Random.Range(minSalary, maxSalary);
-        productivity = Random.Range(minProductivity, maxProductivity);
-        likeability = Random.Range(minLikeability, maxLikeability);
-        passion = Random.Range(minPassion, maxPassion);
+        salary = UnityEngine.Random.Range(minSalary, maxSalary);
+        productivity = UnityEngine.Random.Range(minProductivity, maxProductivity);
+        likeability = UnityEngine.Random.Range(minLikeability, maxLikeability);
+        passion = UnityEngine.Random.Range(minPassion, maxPassion);
         morale = 1 + passion;
         moraleGainPerShip = passion/maxPassion * moraleGainPerShipFactor;
         moraleLossPerLeech = (1-passion/maxPassion) * moraleLossPerLeechFactor;
@@ -57,8 +59,8 @@ public class Employee
         string[] firsts = { "Dorby", "Billmie", "Grundson", "Damn", "Blant", "Forson", "Biker", "Lorz" };
         string[] lasts = { "McSleeve", "Grunderson", "Raucous", "Blastronaut", "Ramrod", "Cussing" };
 
-        string first = firsts[Random.Range(0, firsts.Length)];
-        string last = lasts[Random.Range(0, lasts.Length)];
+        string first = firsts[UnityEngine.Random.Range(0, firsts.Length)];
+        string last = lasts[UnityEngine.Random.Range(0, lasts.Length)];
 
         return first + " " + last;
     }
@@ -72,7 +74,7 @@ public class Employee
 
     public void UpdateMorale()
     {
-        float idealSalary = Random.Range(50, 75);
+        float idealSalary = UnityEngine.Random.Range(50, 75);
         for (int i = 0; i < yrsAtJob; i++)
         {
             idealSalary += (idealSalary * 0.035f); //ideal salary is some starting salary plus an avg raise for each "year" they've worked
@@ -81,20 +83,20 @@ public class Employee
         if(salary -  idealSalary < 0)
         {
             float toughItOutPcnt = (passion / 50) * 100;
-            float loseMoraleChance = Random.Range(0, 100f);
+            float loseMoraleChance = UnityEngine.Random.Range(0, 100f);
 
             if((int)loseMoraleChance > toughItOutPcnt)
             {
-                morale -= Random.Range(2, (2 + (10 - 10 * (passion / 50))));
+                morale -= UnityEngine.Random.Range(2, (2 + (10 - 10 * (passion / 50))));
             }
         }
     }
 
     public void Promote()
     {
-        float percentRaise = Random.Range(3f, 4f);
+        float percentRaise = UnityEngine.Random.Range(3f, 4f);
         salary += (salary * (percentRaise / 100));
-        likeability += Random.Range(5, 8) * (1 + (passion / 50));
+        likeability += UnityEngine.Random.Range(5, 8) * (1 + (passion / 50));
 
         if(morale >= 50)
         {

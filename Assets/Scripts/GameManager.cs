@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
         float shipsPerSecond = 1 / timeToShip;
         float revenuePerSecond = shipsPerSecond * employeeManager.prodReward;
         float costPerSecond = employeeManager.CalculateCost() / PAY_TIMESCALE;
-        print("Time To Ship: " + timeToShip + " :: Ships/s: " + shipsPerSecond + " :: rev/s: " + revenuePerSecond + " :: cost/s: " + costPerSecond);
+        //print("Time To Ship: " + timeToShip + " :: Ships/s: " + shipsPerSecond + " :: rev/s: " + revenuePerSecond + " :: cost/s: " + costPerSecond);
 
         return netValuePerSecond = revenuePerSecond-costPerSecond;
     }
