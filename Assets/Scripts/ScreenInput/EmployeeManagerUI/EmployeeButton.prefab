@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5663383071746441315}
   - component: {fileID: 9038601427800782025}
   - component: {fileID: 2843361431549018621}
-  - component: {fileID: 4532900932290671433}
   - component: {fileID: 2699420208698011738}
   m_Layer: 0
   m_Name: EmployeeButton
@@ -135,18 +134,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4532900932290671433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3412331278518488344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad10cc935fe450e42a73ef8ada2e9e08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2699420208698011738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,4 +246,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Initials
+  m_Text: Emp ID

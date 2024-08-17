@@ -17,6 +17,6 @@ public class EmployeeButton : MonoBehaviour
     public void SelectEmployee()
     {
         Debug.Log(employee.StatsString());
-        GameObject.FindObjectOfType<EmployeeManager>().selectedEmployee = employeeIndex;
+        FindObjectOfType<EmployeeManager>().selectedEmployee = employeeIndex;
     }
 }
