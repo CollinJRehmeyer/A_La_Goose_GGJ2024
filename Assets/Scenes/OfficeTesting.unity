@@ -720,7 +720,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 133448674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5028a2a9dc246a84184f08d128109e7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a1b3fb111a7817458778df3680f2039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &328172908
@@ -8200,6 +8200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de013245598513f4da5b8283956c931e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  employees: []
   employeeButtons: []
   employeeGrid: {fileID: 133448674}
   employeeBtnPrefab: {fileID: 3412331278518488344, guid: 3f1e293b133f1064a904dac50f9a0bca, type: 3}
