@@ -11,15 +11,13 @@ public class EmployeeManager : MonoBehaviour
     public float totalCost;
     public float avgMorale;
 
-    public float revenue;
+    public float totalValue;
 
     public Slider prodSlider;
     public Slider costSlider;
     public Slider moraleSlider;
-    public Text revenueText;
+    public Text valueText;
 
-    public static GameStatsSO gameStats;
-    private float timer = 0;
 
     [Range(0, 10)]
     public int selectedEmployee;
@@ -32,21 +30,7 @@ public class EmployeeManager : MonoBehaviour
 
     private void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= 1)
-        {
-            timer = 0;
 
-            foreach (Employee e in employees)
-            {
-                e.UpdateSalaryInfo();
-                e.UpdateMorale();
-            }
-            Debug.Log(employees[0].StatsString());
-
-            UpdateValues();
-        }
-        
 
         if (Input.GetKeyDown(KeyCode.R)) 
         {
@@ -55,7 +39,7 @@ public class EmployeeManager : MonoBehaviour
         }
     }
 
-    private void UpdateValues()
+    public void UpdateValues()
     {
         totalProd = CalculateProductivity();
         totalCost = CalculateCost();
@@ -65,13 +49,11 @@ public class EmployeeManager : MonoBehaviour
         costSlider.value = totalCost / 1000;
         moraleSlider.value = avgMorale / 100;
 
-        revenue += totalProd - totalCost;
-
         prodSlider.GetComponentInChildren<Text>().text = "Productivity: " + totalProd.ToString("F");
         costSlider.GetComponentInChildren<Text>().text = "Overhead: " + totalCost.ToString("F");
         moraleSlider.GetComponentInChildren<Text>().text = "Avg. Morale: " + avgMorale.ToString("F") + "/50";
 
-        revenueText.text = "Revenue: " + revenue.ToString("F");
+        valueText.text = "Company Value: " + totalValue.ToString("F");
     }
 
     private void ResetEmployeeList()
@@ -96,6 +78,21 @@ public class EmployeeManager : MonoBehaviour
         }
     }
 
+    public void AddProdToValue()
+    {
+        foreach(Employee e in employees)
+        {
+            totalValue += e.productivity;
+        }
+    }
+
+    public void PayEmployeeSalaries()
+    {
+        foreach (Employee e in employees)
+        {
+            totalValue -= e.salary;
+        }
+    }
 
     private float CalculateProductivity()
     {
