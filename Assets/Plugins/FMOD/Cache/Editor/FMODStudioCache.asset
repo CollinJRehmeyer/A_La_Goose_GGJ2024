@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638594122110643837
+  lastModified: 638594363434846157
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -47,7 +47,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 205526
---- !u!114 &-3561945869075141612
+--- !u!114 &-5696270897029961332
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,14 +57,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/New Event
+  m_Name: event:/Employee Talking
   m_EditorClassIdentifier: 
-  Path: event:/New Event
+  Path: event:/Employee Talking
   Guid:
-    Data1: -1734703027
-    Data2: 1141716798
-    Data3: -1293191291
-    Data4: 1964324742
+    Data1: -917020631
+    Data2: 1329044253
+    Data3: 1800039597
+    Data4: -1906107915
   Banks:
   - {fileID: 2159605530403505793}
   IsStream: 0
@@ -73,7 +73,34 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 5000
+--- !u!114 &-1140969278379289144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Elevator Door To Promotion
+  m_EditorClassIdentifier: 
+  Path: event:/Elevator Door To Promotion
+  Guid:
+    Data1: -2059466358
+    Data2: 1121666057
+    Data3: -406029682
+    Data4: 569889202
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,14 +118,16 @@ MonoBehaviour:
   - {fileID: -8270341587389453454}
   - {fileID: 2159605530403505793}
   EditorEvents:
-  - {fileID: -3561945869075141612}
   - {fileID: -8007400602082880326}
+  - {fileID: 4584747308474857108}
+  - {fileID: -5696270897029961332}
+  - {fileID: -1140969278379289144}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8270341587389453454}
   StringsBanks:
   - {fileID: 815529047274646714}
-  cacheTime: 638594122181168224
+  cacheTime: 638594395037836064
   cacheVersion: 131619
 --- !u!114 &815529047274646714
 MonoBehaviour:
@@ -115,10 +144,10 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638594122110653804
+  lastModified: 638594363434896025
   FileSizes:
   - Name: Desktop
-    Value: 942
+    Value: 1070
   Exists: 1
 --- !u!114 &2159605530403505793
 MonoBehaviour:
@@ -135,8 +164,35 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Sounds.bank
   Name: Sounds
   StudioPath: bank:/Sounds
-  lastModified: 638594122181168224
+  lastModified: 638594395037836064
   FileSizes:
   - Name: Desktop
-    Value: 2723936
+    Value: 3490848
   Exists: 1
+--- !u!114 &4584747308474857108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Elevator to Cannon
+  m_EditorClassIdentifier: 
+  Path: event:/Elevator to Cannon
+  Guid:
+    Data1: 1875919360
+    Data2: 1217812956
+    Data3: -248631393
+    Data4: 1214426393
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5500
