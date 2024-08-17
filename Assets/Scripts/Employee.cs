@@ -9,12 +9,28 @@ public class Employee
 {
     public string name;
     public float yrsAtJob;
+    public int successfulShips;
     public float salary;
     public float productivity;
+    public float likeability;
     public float morale;
-
-    private float passion;
+    public float moraleLossPerLeech;
+    public float moraleGainPerShip;
+    public float passion;
     private float totalEarned;
+
+
+    public float maxProductivity = 5;
+    public float minProductivity = 0;
+    public float maxLikeability = 5;
+    public float minLikeability = 0;
+    public float maxPassion = 5;
+    public float minPassion = 0;
+    public float maxSalary = 20;
+    public float minSalary = 1;
+
+    public float moraleGainPerShipFactor = 1;
+    public float moraleLossPerLeechFactor =.01f;
 
 
 
@@ -23,10 +39,13 @@ public class Employee
     {
         name = RandomName();
 
-        salary = Random.Range(0, 100);
-        productivity = Random.Range(0, 100);
-        morale = Random.Range(0, 100);
-        passion = Random.Range(30, 50);
+        salary = Random.Range(minSalary, maxSalary);
+        productivity = Random.Range(minProductivity, maxProductivity);
+        likeability = Random.Range(minLikeability, maxLikeability);
+        passion = Random.Range(minPassion, maxPassion);
+        morale = 1 + passion;
+        moraleGainPerShip = passion/maxPassion * moraleGainPerShipFactor;
+        moraleLossPerLeech = (1-passion/maxPassion) * moraleLossPerLeechFactor;
 
         totalEarned = 0;
         yrsAtJob = 0;
@@ -75,7 +94,7 @@ public class Employee
     {
         float percentRaise = Random.Range(3f, 4f);
         salary += (salary * (percentRaise / 100));
-        morale += Random.Range(5, 8) * (1 + (passion / 50));
+        likeability += Random.Range(5, 8) * (1 + (passion / 50));
 
         if(morale >= 50)
         {
@@ -86,7 +105,7 @@ public class Employee
 
     public string StatsString()
     {
-        return name + "- " + "Age: " + yrsAtJob + ", Salary: " + salary + ", Prod: " + productivity + ", Morale: " + morale;
+        return name + "- " + "Age: " + yrsAtJob + ", Salary: " + salary + ", Prod: " + productivity + ", Likeability: " + likeability;
     }
 
 }

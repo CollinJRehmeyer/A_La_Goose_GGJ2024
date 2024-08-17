@@ -8,15 +8,23 @@ public class EmployeeManager : MonoBehaviour
     public List<Employee> employees = new List<Employee>();
 
     public float totalProd;
+    public float prodGoal = 100;
+    public float prodReward = 1;
     public float totalCost;
+    public float avgLikeability;
     public float avgMorale;
-
     public float totalValue;
+    public float moraleBoostPership;
+    public int numStartEmployees = 1;
 
     public Slider prodSlider;
     public Slider costSlider;
-    public Slider moraleSlider;
+    public Slider likeabilitySlider;
     public Text valueText;
+    public Text employeeLedgerText;
+    public bool fire;
+    public bool hire;
+
 
 
     [Range(0, 10)]
@@ -31,7 +39,22 @@ public class EmployeeManager : MonoBehaviour
     private void Update()
     {
 
+        if (fire)
+        {
+            if (selectedEmployee < employees.Count)
+            {
+                employees.RemoveAt(selectedEmployee);
+            }
+            fire = false;
 
+        }
+        if (hire)
+        {
+            Hire();
+            hire = false;
+            
+
+        }
         if (Input.GetKeyDown(KeyCode.R)) 
         {
             ResetEmployeeList();
@@ -41,20 +64,48 @@ public class EmployeeManager : MonoBehaviour
 
     public void UpdateValues()
     {
-        totalProd = CalculateProductivity();
+        if(totalProd >= prodGoal)
+        {
+            ShipProduct();
+            totalProd = 0;
+        }
+
         totalCost = CalculateCost();
-        avgMorale = CalculateAvgMorale();
+        avgLikeability = CalculateAvgLikeability();
 
-        prodSlider.value = totalProd / 1000;
-        costSlider.value = totalCost / 1000;
-        moraleSlider.value = avgMorale / 100;
+        prodSlider.value = totalProd / prodGoal;
+        costSlider.value = totalCost / 5;
+        likeabilitySlider.value = avgLikeability / 5;
 
-        prodSlider.GetComponentInChildren<Text>().text = "Productivity: " + totalProd.ToString("F");
-        costSlider.GetComponentInChildren<Text>().text = "Overhead: " + totalCost.ToString("F");
-        moraleSlider.GetComponentInChildren<Text>().text = "Avg. Morale: " + avgMorale.ToString("F") + "/50";
+        prodSlider.GetComponentInChildren<Text>().text = "Progress To Ship: " + totalProd.ToString("F");
+        costSlider.GetComponentInChildren<Text>().text = "Payroll Cost: " + totalCost.ToString("F");
+        likeabilitySlider.GetComponentInChildren<Text>().text = "Avg. Likeability: " + avgLikeability.ToString("F") + "/5";
 
         valueText.text = "Company Value: " + totalValue.ToString("F");
+        employeeLedgerText.text = EmployeeLedgerReadout();
     }
+    private string EmployeeLedgerReadout()
+    {
+        string readout = "";
+        int i=0;
+        foreach (Employee e in employees)
+        {
+            readout += "#";
+            readout += i.ToString() + " ";
+            i++;
+           
+            readout += " || Prod: " + e.productivity.ToString("F1");
+            readout += " || Sal: " + e.salary.ToString("F1");
+            readout += " || Morale: " + e.morale.ToString("F1");
+            readout += " || Likeability: " + e.likeability.ToString("F1");
+            readout += " || Ships: " + e.successfulShips.ToString("F1");
+            readout += " || Age: " + e.yrsAtJob.ToString("F1");
+            readout += " || Name: " + e.name;
+            readout += "\n";
+        }
+            return readout;
+    }
+
 
     private void ResetEmployeeList()
     {
@@ -64,10 +115,14 @@ public class EmployeeManager : MonoBehaviour
 
     private void PopulateEmployeeList()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < numStartEmployees; i++)
         {
             employees.Add(new Employee());
         }
+    }
+    public void Hire()
+    {
+        employees.Add(new Employee());
     }
 
     private void PrintEmployees()
@@ -78,13 +133,25 @@ public class EmployeeManager : MonoBehaviour
         }
     }
 
-    public void AddProdToValue()
+    public void AddProgressToShip()
     {
-        foreach(Employee e in employees)
-        {
-            totalValue += e.productivity;
-        }
+        totalProd += CalculateProductivity();
+        
     }
+    public void WorkEmployees()
+    {
+        AddProgressToShip();
+        foreach (Employee e in employees)
+        {
+            e.morale -= e.moraleLossPerLeech;
+            if (e.morale < 0)
+            {
+                e.morale = 0;
+            }
+        }
+
+    }
+
 
     public void PayEmployeeSalaries()
     {
@@ -94,17 +161,38 @@ public class EmployeeManager : MonoBehaviour
         }
     }
 
-    private float CalculateProductivity()
+    public float CalculateProductivity()
     {
         float prod = 0;
         foreach(Employee e in employees)
         {
-            prod += e.productivity;
+            prod += e.productivity * avgLikeability * Mathf.Max(e.morale, 1f)  ;
         }
         return prod;
     }
+    private void ShipProduct()
+    {
+        totalValue += prodReward;
+        foreach (Employee e in employees)
+        {
+            e.successfulShips++;
+            //every time you ship a product you feel good
+            e.morale += e.moraleGainPerShip;
+            if (e.morale > 5)
+            {
+                e.morale = 5;
+            }
+            e.morale+=e.moraleGainPerShip;
+            //every time you ship a product, you feel a little less good about it, until you stop caring
+            e.moraleGainPerShip -= (e.maxPassion - e.passion) * 0.2f;
+            if (e.moraleGainPerShip < 0) {
+                e.moraleGainPerShip = 0;
+            }
+            
+        }
+    }
 
-    private float CalculateCost() 
+    public float CalculateCost() 
     {
         float cost = 0;
         foreach (Employee e in employees)
@@ -114,14 +202,14 @@ public class EmployeeManager : MonoBehaviour
         return cost;
     }
 
-    private float CalculateAvgMorale()
+    private float CalculateAvgLikeability()
     {
-        float totalMorale = 0;
+        float totalLikeability = 0;
         foreach(Employee e in employees)
         {
-            totalMorale += e.morale;
+            totalLikeability += e.likeability;
         }
 
-        return (totalMorale / employees.Count);
+        return (totalLikeability / employees.Count);
     }
 }
