@@ -16,6 +16,8 @@ public class EmployeeManager : MonoBehaviour
 
     public GameObject elevatorMarker;
 
+    public Animator elevator;
+
     public DeskButton fireButton;
     public DeskButton dismissButton;
     public SpriteRenderer employeeOfficeSprite;
@@ -177,7 +179,6 @@ public class EmployeeManager : MonoBehaviour
         {
             Debug.Log("Dismissed");
             employeeButtons[selectedEmployee].GetComponent<EmployeeButton>().DismissEmployeeFromOffice();
-            SetEmployeeOfficeSprite(null);
         }
         else
         {
@@ -193,6 +194,7 @@ public class EmployeeManager : MonoBehaviour
             Debug.Log("FIRED!");
             RemoveEmployee(employees[selectedEmployee]);
             selectedEmployee = -1;
+            GameObject.Find("Doors").GetComponent<Animator>().SetTrigger("close");
         }
         else
         {
