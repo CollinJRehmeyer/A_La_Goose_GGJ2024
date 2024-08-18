@@ -54,17 +54,17 @@ public class GameManager : MonoBehaviour
             LeechValue();
         }
         float ev = CalculateExpectedValue();
-        expectedValueReadout.text = "NetValuePerSecond: " + ev.ToString();
-        expectedValueTracker.transform.position = new Vector3(expectedValueTracker.transform.position.x, Mathf.LerpUnclamped(4, 5, ev/50), expectedValueTracker.transform.position.x);
+        //expectedValueReadout.text = "NetValuePerSecond: " + ev.ToString();
+        //expectedValueTracker.transform.position = new Vector3(expectedValueTracker.transform.position.x, Mathf.LerpUnclamped(4, 5, ev/50), expectedValueTracker.transform.position.x);
         if (ev < 0)
         {
             var mainModule = expectedValueTracker.main;
-            mainModule.startColor = new Color(1, 0, 0);
+            //mainModule.startColor = new Color(1, 0, 0);
         }
         else
         {
             var mainModule = expectedValueTracker.main;
-            mainModule.startColor = new Color(0, 1, 0);
+            //mainModule.startColor = new Color(0, 1, 0);
         }
         
     }
