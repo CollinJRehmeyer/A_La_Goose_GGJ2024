@@ -271,10 +271,17 @@ public class ResumeStack : MonoBehaviour
 
         while (elapsedTime < timeToMove)
         {
-            canHighlight = false;
-            pageToMove.transform.position = Vector3.Lerp(startPos, endPos, elapsedTime / timeToMove);
-            pageToMove.transform.rotation = Quaternion.Lerp(startRot, endRot, elapsedTime / timeToMove);
-            elapsedTime += Time.deltaTime;
+            if (pageToMove != null)
+            {
+                canHighlight = false;
+                pageToMove.transform.position = Vector3.Lerp(startPos, endPos, elapsedTime / timeToMove);
+                pageToMove.transform.rotation = Quaternion.Lerp(startRot, endRot, elapsedTime / timeToMove);
+                elapsedTime += Time.deltaTime;
+            }
+            else
+            {
+                canHighlight = true;
+            }
             yield return null;
         }
 
@@ -303,10 +310,17 @@ public class ResumeStack : MonoBehaviour
 
         while (elapsedTime < timeToMove)
         {
-            canHighlight = false;
-            pageToMove.transform.position = Vector3.Lerp(startPos, endPos, elapsedTime / timeToMove);
-            pageToMove.transform.rotation = Quaternion.Lerp(startRot, endRot, elapsedTime / timeToMove);
-            elapsedTime += Time.deltaTime;
+            if (pageToMove != null)
+            {
+                canHighlight = false;
+                pageToMove.transform.position = Vector3.Lerp(startPos, endPos, elapsedTime / timeToMove);
+                pageToMove.transform.rotation = Quaternion.Lerp(startRot, endRot, elapsedTime / timeToMove);
+                elapsedTime += Time.deltaTime;
+            }
+            else
+            {
+                canHighlight = true;
+            }
             yield return null;
         }
 
