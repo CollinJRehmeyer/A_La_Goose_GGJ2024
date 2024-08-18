@@ -153,7 +153,7 @@ public class ResumeStack : MonoBehaviour
     }
     void AcceptResume()
     {
-        employeeManager.employees.Add(selectedPage.employee);
+        employeeManager.AddEmployee(selectedPage.employee, employeeManager.employees.Count);
         pages.Remove(selectedPage);
         Destroy(selectedPage.gameObject);
     }
@@ -222,7 +222,10 @@ public class ResumeStack : MonoBehaviour
         ResumePage spawnedPage = spawnedResumeObject.GetComponent<ResumePage>();
         if (spawnedPage != null)
         {
-            spawnedPage.employee = new Employee();
+            Employee e = new Employee();
+            e.employeeSprite = employeeManager.employeeSprites[Random.Range(0, employeeManager.employeeSprites.Length)];
+            spawnedPage.employee = e;
+            
             spawnedPage.PopulatePage();
             pages.Add(spawnedPage);
             MovePagesInStack(false);

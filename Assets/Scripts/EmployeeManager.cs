@@ -83,11 +83,11 @@ public class EmployeeManager : MonoBehaviour
 
         prodSlider.value = totalProd / prodGoal;
         costSlider.value = totalCost / 5;
-        likeabilitySlider.value = avgLikeability / 5;
+        //likeabilitySlider.value = avgLikeability / 5;
 
         prodSlider.GetComponentInChildren<Text>().text = "Progress To Ship: " + totalProd.ToString("F");
         costSlider.GetComponentInChildren<Text>().text = "Payroll Cost: " + totalCost.ToString("F");
-        likeabilitySlider.GetComponentInChildren<Text>().text = "Avg. Likeability: " + avgLikeability.ToString("F") + "/5";
+        //likeabilitySlider.GetComponentInChildren<Text>().text = "Avg. Likeability: " + avgLikeability.ToString("F") + "/5";
 
         valueText.text = "Company Value: " + totalValue.ToString("F");
         //employeeLedgerText.text = EmployeeLedgerReadout();
@@ -129,9 +129,8 @@ public class EmployeeManager : MonoBehaviour
         }
     }
 
-    private void AddEmployee(Employee e, int index)
+    public void AddEmployee(Employee e, int index)
     {
-        e.employeeSprite = employeeSprites[UnityEngine.Random.Range(0, employeeSprites.Length)];
         employees.Add(e);
         GameObject empBtn = Instantiate(employeeBtnPrefab, employeeGrid.transform);
         EmployeeButton empBtnComp = empBtn.GetComponent<EmployeeButton>();

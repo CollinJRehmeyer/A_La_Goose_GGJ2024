@@ -1,0 +1,172 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2559445689097478501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7761487865520598073}
+  - component: {fileID: 8398886523520488822}
+  - component: {fileID: 7380982429961605497}
+  - component: {fileID: 8464649454348478632}
+  - component: {fileID: 5835171263857982246}
+  m_Layer: 0
+  m_Name: EmployeeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7761487865520598073
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559445689097478501}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17.4, y: -35.6, z: -89.08884}
+  m_LocalScale: {x: 3.6605, y: 3.6605, z: 3.6605}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8398886523520488822
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559445689097478501}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &7380982429961605497
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559445689097478501}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8464649454348478632
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559445689097478501}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5835171263857982246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559445689097478501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de013245598513f4da5b8283956c931e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  employees: []
+  employeeButtons: []
+  employeeSprites:
+  - {fileID: -99092148, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: -1253333261, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: -333725349, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 1765674216, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 574847032, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: -458010314, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 157520202, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 266837702, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: -635892621, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: -1119159770, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 437780571, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 1880818231, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: -2090458641, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 212015148, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 1655578253, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 1816495478, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 1237671288, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 463995222, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: -61346112, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 1043423433, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 1430649834, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: -2011334681, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 857019120, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 2010116128, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 580311955, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 1667542699, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: -354109607, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: -1772959860, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 698983422, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  - {fileID: 476642601, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
+  employeeGrid: {fileID: 0}
+  employeeBtnPrefab: {fileID: 3412331278518488344, guid: 3f1e293b133f1064a904dac50f9a0bca, type: 3}
+  totalProd: 0
+  prodGoal: 100
+  prodReward: 1
+  totalCost: 0
+  avgLikeability: 0
+  avgMorale: 0
+  totalValue: 0
+  moraleBoostPership: 0
+  numStartEmployees: 0
+  prodSlider: {fileID: 0}
+  costSlider: {fileID: 0}
+  likeabilitySlider: {fileID: 0}
+  valueText: {fileID: 0}
+  employeeLedgerText: {fileID: 0}
+  fire: 0
+  hire: 0
+  selectedEmployee: 0
