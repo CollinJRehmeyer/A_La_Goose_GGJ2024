@@ -83,11 +83,11 @@ public class EmployeeManager : MonoBehaviour
 
         prodSlider.value = totalProd / prodGoal;
         costSlider.value = totalCost / 5;
-        likeabilitySlider.value = avgLikeability / 5;
+        //likeabilitySlider.value = avgLikeability / 5;
 
         prodSlider.GetComponentInChildren<Text>().text = "Progress To Ship: " + totalProd.ToString("F");
         costSlider.GetComponentInChildren<Text>().text = "Payroll Cost: " + totalCost.ToString("F");
-        likeabilitySlider.GetComponentInChildren<Text>().text = "Avg. Likeability: " + avgLikeability.ToString("F") + "/5";
+        //likeabilitySlider.GetComponentInChildren<Text>().text = "Avg. Likeability: " + avgLikeability.ToString("F") + "/5";
 
         valueText.text = "Company Value: " + totalValue.ToString("F");
         //employeeLedgerText.text = EmployeeLedgerReadout();

@@ -1114,7 +1114,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -20.980095, y: -0.38939852, z: -8.095}
-  m_LocalScale: {x: 1.5, y: 0.5, z: 1.5}
+  m_LocalScale: {x: 3, y: 0.5, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1451421718455899030}
@@ -1159,5 +1159,4 @@ MonoBehaviour:
   prodText: {fileID: 6361319480509065126}
   salText: {fileID: 7892579821778928349}
   passionText: {fileID: 5099984563354148336}
-  headshotSprite: {fileID: 0}
   headshotRenderer: {fileID: 6315564910312513592}
