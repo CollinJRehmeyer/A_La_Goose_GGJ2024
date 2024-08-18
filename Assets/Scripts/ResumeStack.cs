@@ -91,12 +91,16 @@ public class ResumeStack : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
-            isDragging = false;
-            if(selectedPage != null)
+            if (isDragging == true)
             {
-                CheckDragPositionForAccept();
+                isDragging = false;
+                if (selectedPage != null)
+                {
+                    CheckDragPositionForAccept();
 
+                }
             }
+            
 
         }
 
@@ -136,10 +140,12 @@ public class ResumeStack : MonoBehaviour
         {
             if (distanceX < 0)
             {
+                //print("draged to reject");
                 RejectResume();
             }
             else
             {
+                //print("dragged to accept");
                 AcceptResume();
             }
             canAdd = true;
@@ -150,9 +156,11 @@ public class ResumeStack : MonoBehaviour
     {
         pages.Remove(selectedPage);
         Destroy(selectedPage.gameObject);
+        //print("reject resume");
     }
     void AcceptResume()
     {
+        //print("accept resume");
         employeeManager.AddEmployee(selectedPage.employee, employeeManager.employees.Count);
         pages.Remove(selectedPage);
         Destroy(selectedPage.gameObject);
