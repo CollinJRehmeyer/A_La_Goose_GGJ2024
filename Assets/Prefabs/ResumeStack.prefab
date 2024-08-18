@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3211407942181049255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7925652397871607480}
+  - component: {fileID: 674458676188729072}
+  - component: {fileID: 3495577720000485420}
+  m_Layer: 7
+  m_Name: ResumeStack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7925652397871607480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3211407942181049255}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.044, y: -0.294, z: -7.752}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &674458676188729072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3211407942181049255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c6978f8fa1ba0408734bc499c1c50f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pages: []
+  employeeManager: {fileID: 0}
+  ResumePagePrefab: {fileID: 8192827256937174958, guid: d5841b8b1cf4f8f45948ca83408874bb, type: 3}
+  distancebetweenPages: 0.01
+  randomRotation: 10
+  boxCollider: {fileID: 3495577720000485420}
+  boxColliderBufferHeight: 0.1
+  isHoveringOverStack: 0
+  canHighlight: 1
+  canAdd: 1
+  pagesInQueue: 0
+  startingPages: 0
+  isDragging: 0
+  pageIsHighlight: 0
+  selectedPage: {fileID: 0}
+  pageHighlightRotation: {x: -0.29813322, y: -0.124485046, z: -0.039249983, w: 0.9455578}
+  pageHighlightOffset: {x: 0, y: 0.2, z: 0}
+  pageAcceptRotation: {x: -0.29813322, y: 0.124485046, z: 0.039249983, w: 0.9455578}
+  pageAcceptOffset: {x: 0.3, y: 0, z: 0}
+  pageRejectRotation: {x: -0.29045948, y: -0.2468401, z: -0.077828385, w: 0.9212198}
+  pageRejectOffset: {x: -0.3, y: 0, z: 0}
+  distanceForAcceptedSwipe: 150
+  maxSwipeDistance: 300
+--- !u!65 &3495577720000485420
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3211407942181049255}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3, y: 0.001, z: 0.4}
+  m_Center: {x: 0, y: 0, z: 0}

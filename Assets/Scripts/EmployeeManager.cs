@@ -8,8 +8,20 @@ public class EmployeeManager : MonoBehaviour
 {
     public List<Employee> employees = new List<Employee>();
     public List<GameObject> employeeButtons = new List<GameObject>();
+
+    public Sprite[] employeeSprites;
+
     public GameObject employeeGrid;
     public GameObject employeeBtnPrefab;
+
+    public GameObject elevatorMarker;
+
+    public Animator elevator;
+
+    public DeskButton fireButton;
+    public DeskButton dismissButton;
+    public SpriteRenderer employeeOfficeSprite;
+
 
     public float totalProd;
     public float prodGoal = 100;
@@ -29,18 +41,20 @@ public class EmployeeManager : MonoBehaviour
     public bool fire;
     public bool hire;
 
-
-
     public int selectedEmployee;
 
     private void Start()
     {
         PopulateEmployeeList();
         PrintEmployees();
+
+        fireButton.onButtonPress.AddListener(FireEmployee);
+        dismissButton.onButtonPress.AddListener(DismissEmployee);
     }
 
     private void Update()
     {
+
 
         if (fire)
         {
@@ -48,6 +62,7 @@ public class EmployeeManager : MonoBehaviour
             {
                 //employees.RemoveAt(selectedEmployee);
                 RemoveEmployee(employees[selectedEmployee]);
+                CameraShake.Instance.StartShake(.5f, 0.05f);
             }
             fire = false;
 
@@ -76,17 +91,18 @@ public class EmployeeManager : MonoBehaviour
 
         totalCost = CalculateCost();
         avgLikeability = CalculateAvgLikeability();
+        avgMorale = CalculateAvgMorale();
 
         prodSlider.value = totalProd / prodGoal;
         costSlider.value = totalCost / 5;
-        likeabilitySlider.value = avgLikeability / 5;
+        //likeabilitySlider.value = avgLikeability / 5;
 
         prodSlider.GetComponentInChildren<Text>().text = "Progress To Ship: " + totalProd.ToString("F");
         costSlider.GetComponentInChildren<Text>().text = "Payroll Cost: " + totalCost.ToString("F");
-        likeabilitySlider.GetComponentInChildren<Text>().text = "Avg. Likeability: " + avgLikeability.ToString("F") + "/5";
+        //likeabilitySlider.GetComponentInChildren<Text>().text = "Avg. Likeability: " + avgLikeability.ToString("F") + "/5";
 
         valueText.text = "Company Value: " + totalValue.ToString("F");
-        employeeLedgerText.text = EmployeeLedgerReadout();
+        //employeeLedgerText.text = EmployeeLedgerReadout();
     }
     private string EmployeeLedgerReadout()
     {
@@ -125,13 +141,15 @@ public class EmployeeManager : MonoBehaviour
         }
     }
 
-    private void AddEmployee(Employee e, int index)
+    public void AddEmployee(Employee e, int index)
     {
         employees.Add(e);
         GameObject empBtn = Instantiate(employeeBtnPrefab, employeeGrid.transform);
         EmployeeButton empBtnComp = empBtn.GetComponent<EmployeeButton>();
         employeeButtons.Add(empBtn);
+        //empBtnComp.SetSprite(e.employeeSprite);
         empBtnComp.employee = e;
+        empBtnComp.manager = this;
         empBtnComp.employeeIndex = index;
         empBtnComp.GetComponentInChildren<Text>().text = index.ToString();
 
@@ -145,8 +163,9 @@ public class EmployeeManager : MonoBehaviour
             {
                 if(empBtnComp.employee == e)
                 {
-                    Destroy(empBtn);
                     employees.Remove(e);
+                    employeeButtons.Remove(empBtn);
+                    Destroy(empBtn);
                     return;
                 }
             }
@@ -154,7 +173,39 @@ public class EmployeeManager : MonoBehaviour
         
     }
 
+    public void DismissEmployee()
+    {
+        if (selectedEmployee != -1)
+        {
+            Debug.Log("Dismissed");
+            employeeButtons[selectedEmployee].GetComponent<EmployeeButton>().DismissEmployeeFromOffice();
+        }
+        else
+        {
+            Debug.Log("No selected employee");
+        }
+        
+    }
 
+    public void FireEmployee()
+    {
+        if(selectedEmployee != -1)
+        {
+            Debug.Log("FIRED!");
+            RemoveEmployee(employees[selectedEmployee]);
+            selectedEmployee = -1;
+            GameObject.Find("Doors").GetComponent<Animator>().SetTrigger("close");
+        }
+        else
+        {
+            Debug.Log("No selected employee");
+        }
+    }
+
+    public void SetEmployeeOfficeSprite(Sprite empSprite)
+    {
+        employeeOfficeSprite.sprite = empSprite;
+    }
 
     public void Hire()
     {
@@ -247,5 +298,15 @@ public class EmployeeManager : MonoBehaviour
         }
 
         return (totalLikeability / employees.Count);
+    }
+    public float CalculateAvgMorale()
+    {
+        float totalMorale = 0;
+        foreach (Employee e in employees)
+        {
+            totalMorale += e.likeability;
+        }
+
+        return (totalMorale / employees.Count);
     }
 }
