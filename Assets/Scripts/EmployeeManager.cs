@@ -89,6 +89,7 @@ public class EmployeeManager : MonoBehaviour
 
         totalCost = CalculateCost();
         avgLikeability = CalculateAvgLikeability();
+        avgMorale = CalculateAvgMorale();
 
         prodSlider.value = totalProd / prodGoal;
         costSlider.value = totalCost / 5;
@@ -295,5 +296,15 @@ public class EmployeeManager : MonoBehaviour
         }
 
         return (totalLikeability / employees.Count);
+    }
+    public float CalculateAvgMorale()
+    {
+        float totalMorale = 0;
+        foreach (Employee e in employees)
+        {
+            totalMorale += e.likeability;
+        }
+
+        return (totalMorale / employees.Count);
     }
 }

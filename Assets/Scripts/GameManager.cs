@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     [Tooltip("How many seconds between adding revenue")]
     public float ADD_VALUE_TIMESCALE;
 
-    private float payTimer = 0, addValueTimer = 0;
+    public float payTimer = 0, addValueTimer = 0;
 
     public Slider payTimerSlider;
     public Slider addValueTimerSlider;
