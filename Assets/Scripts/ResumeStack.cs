@@ -91,12 +91,16 @@ public class ResumeStack : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
-            isDragging = false;
-            if(selectedPage != null)
+            if (isDragging == true)
             {
-                CheckDragPositionForAccept();
+                isDragging = false;
+                if (selectedPage != null)
+                {
+                    CheckDragPositionForAccept();
 
+                }
             }
+
 
         }
 
@@ -132,14 +136,16 @@ public class ResumeStack : MonoBehaviour
         Vector3 currentMousePosition = Input.mousePosition;
         float distanceX = currentMousePosition.x - initialMousePosition.x;
         //print("distance swiped: " + distanceX);
-        if(Mathf.Abs(distanceX)> distanceForAcceptedSwipe)
+        if (Mathf.Abs(distanceX) > distanceForAcceptedSwipe)
         {
             if (distanceX < 0)
             {
+                //print("draged to reject");
                 RejectResume();
             }
             else
             {
+                //print("dragged to accept");
                 AcceptResume();
             }
             canAdd = true;
@@ -150,9 +156,11 @@ public class ResumeStack : MonoBehaviour
     {
         pages.Remove(selectedPage);
         Destroy(selectedPage.gameObject);
+        //print("reject resume");
     }
     void AcceptResume()
     {
+        //print("accept resume");
         employeeManager.AddEmployee(selectedPage.employee, employeeManager.employees.Count);
         pages.Remove(selectedPage);
         Destroy(selectedPage.gameObject);
@@ -160,7 +168,7 @@ public class ResumeStack : MonoBehaviour
 
     void OnMouseHover()
     {
-        if (isHoveringOverStack == false && pages.Count>0)
+        if (isHoveringOverStack == false && pages.Count > 0)
         {
             ResumePage pageToMove = pages[pages.Count - 1];
             selectedPage = pageToMove;
@@ -225,7 +233,7 @@ public class ResumeStack : MonoBehaviour
             Employee e = new Employee();
             e.employeeSprite = employeeManager.employeeSprites[Random.Range(0, employeeManager.employeeSprites.Length)];
             spawnedPage.employee = e;
-            
+
             spawnedPage.PopulatePage();
             pages.Add(spawnedPage);
             MovePagesInStack(false);
@@ -289,7 +297,7 @@ public class ResumeStack : MonoBehaviour
         pageToMove.transform.position = endPos;
         pageToMove.transform.rotation = endRot;
         canHighlight = true;
-        
+
 
     }
     IEnumerator UnhighlightTopPage(ResumePage pageToMove)
