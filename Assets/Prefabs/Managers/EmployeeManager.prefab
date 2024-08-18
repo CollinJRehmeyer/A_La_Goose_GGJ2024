@@ -153,6 +153,9 @@ MonoBehaviour:
   - {fileID: 476642601, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
   employeeGrid: {fileID: 0}
   employeeBtnPrefab: {fileID: 3412331278518488344, guid: 3f1e293b133f1064a904dac50f9a0bca, type: 3}
+  elevatorMarker: {fileID: 0}
+  fireButton: {fileID: 0}
+  dismissButton: {fileID: 0}
   totalProd: 0
   prodGoal: 100
   prodReward: 1
@@ -169,4 +172,4 @@ MonoBehaviour:
   employeeLedgerText: {fileID: 0}
   fire: 0
   hire: 0
-  selectedEmployee: 0
+  selectedEmployee: -1

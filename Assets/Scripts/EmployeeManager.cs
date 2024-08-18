@@ -14,6 +14,13 @@ public class EmployeeManager : MonoBehaviour
     public GameObject employeeGrid;
     public GameObject employeeBtnPrefab;
 
+    public GameObject elevatorMarker;
+
+    public DeskButton fireButton;
+    public DeskButton dismissButton;
+    public SpriteRenderer employeeOfficeSprite;
+
+
     public float totalProd;
     public float prodGoal = 100;
     public float prodReward = 1;
@@ -32,14 +39,15 @@ public class EmployeeManager : MonoBehaviour
     public bool fire;
     public bool hire;
 
-
-
     public int selectedEmployee;
 
     private void Start()
     {
         PopulateEmployeeList();
         PrintEmployees();
+
+        fireButton.onButtonPress.AddListener(FireEmployee);
+        dismissButton.onButtonPress.AddListener(DismissEmployee);
     }
 
     private void Update()
@@ -162,7 +170,39 @@ public class EmployeeManager : MonoBehaviour
         
     }
 
+    public void DismissEmployee()
+    {
+        if (selectedEmployee != -1)
+        {
+            Debug.Log("Dismissed");
+            employeeButtons[selectedEmployee].GetComponent<EmployeeButton>().DismissEmployeeFromOffice();
+            SetEmployeeOfficeSprite(null);
+        }
+        else
+        {
+            Debug.Log("No selected employee");
+        }
+        
+    }
 
+    public void FireEmployee()
+    {
+        if(selectedEmployee != -1)
+        {
+            Debug.Log("FIRED!");
+            RemoveEmployee(employees[selectedEmployee]);
+            selectedEmployee = -1;
+        }
+        else
+        {
+            Debug.Log("No selected employee");
+        }
+    }
+
+    public void SetEmployeeOfficeSprite(Sprite empSprite)
+    {
+        employeeOfficeSprite.sprite = empSprite;
+    }
 
     public void Hire()
     {
