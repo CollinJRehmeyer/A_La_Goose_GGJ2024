@@ -8,6 +8,9 @@ public class EmployeeManager : MonoBehaviour
 {
     public List<Employee> employees = new List<Employee>();
     public List<GameObject> employeeButtons = new List<GameObject>();
+
+    public Sprite[] employeeSprites;
+
     public GameObject employeeGrid;
     public GameObject employeeBtnPrefab;
 
@@ -41,6 +44,7 @@ public class EmployeeManager : MonoBehaviour
 
     private void Update()
     {
+
 
         if (fire)
         {
@@ -86,7 +90,7 @@ public class EmployeeManager : MonoBehaviour
         likeabilitySlider.GetComponentInChildren<Text>().text = "Avg. Likeability: " + avgLikeability.ToString("F") + "/5";
 
         valueText.text = "Company Value: " + totalValue.ToString("F");
-        employeeLedgerText.text = EmployeeLedgerReadout();
+        //employeeLedgerText.text = EmployeeLedgerReadout();
     }
     private string EmployeeLedgerReadout()
     {
@@ -127,11 +131,14 @@ public class EmployeeManager : MonoBehaviour
 
     private void AddEmployee(Employee e, int index)
     {
+        e.employeeSprite = employeeSprites[UnityEngine.Random.Range(0, employeeSprites.Length)];
         employees.Add(e);
         GameObject empBtn = Instantiate(employeeBtnPrefab, employeeGrid.transform);
         EmployeeButton empBtnComp = empBtn.GetComponent<EmployeeButton>();
         employeeButtons.Add(empBtn);
+        //empBtnComp.SetSprite(e.employeeSprite);
         empBtnComp.employee = e;
+        empBtnComp.manager = this;
         empBtnComp.employeeIndex = index;
         empBtnComp.GetComponentInChildren<Text>().text = index.ToString();
 
@@ -145,8 +152,9 @@ public class EmployeeManager : MonoBehaviour
             {
                 if(empBtnComp.employee == e)
                 {
-                    Destroy(empBtn);
                     employees.Remove(e);
+                    employeeButtons.Remove(empBtn);
+                    Destroy(empBtn);
                     return;
                 }
             }

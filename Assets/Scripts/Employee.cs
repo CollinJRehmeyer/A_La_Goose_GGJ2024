@@ -9,6 +9,8 @@ using UnityEngine;
 [Serializable]
 public class Employee
 {
+    public Sprite employeeSprite;
+
     public string name;
     public float yrsAtJob;
     public int successfulShips;
@@ -33,8 +35,6 @@ public class Employee
 
     public float moraleGainPerShipFactor = 1;
     public float moraleLossPerLeechFactor =.01f;
-
-
 
 
     public Employee()
