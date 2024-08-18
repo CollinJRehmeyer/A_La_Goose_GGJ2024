@@ -2021,6 +2021,7 @@ Transform:
   - {fileID: 2045482473}
   - {fileID: 1394662114}
   - {fileID: 212501259}
+  - {fileID: 1422036483}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &176189231
@@ -14073,12 +14074,12 @@ Transform:
   m_GameObject: {fileID: 1422036481}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.121875934, z: -0, w: 0.9925454}
-  m_LocalPosition: {x: -23.88, y: 0.78, z: -2.25}
+  m_LocalPosition: {x: -4.3129997, y: 0.109999955, z: 5.136}
   m_LocalScale: {x: 21.55142, y: 21.551418, z: 21.551418}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1381175040}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 167366526}
   m_LocalEulerAnglesHint: {x: 0, y: -14.001, z: 0}
 --- !u!4 &1425078402 stripped
 Transform:
@@ -18830,6 +18831,10 @@ PrefabInstance:
       propertyPath: elevatorMarker
       value: 
       objectReference: {fileID: 75879825}
+    - target: {fileID: 5835171263857982246, guid: 0fefcd0f32687be48945ac6fd3cf814d, type: 3}
+      propertyPath: employeeOfficeSprite
+      value: 
+      objectReference: {fileID: 1422036482}
     - target: {fileID: 7380982429961605497, guid: 0fefcd0f32687be48945ac6fd3cf814d, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -18956,5 +18961,4 @@ SceneRoots:
   - {fileID: 1016150581}
   - {fileID: 1988658605}
   - {fileID: 167366526}
-  - {fileID: 1422036483}
   - {fileID: 1469765693}

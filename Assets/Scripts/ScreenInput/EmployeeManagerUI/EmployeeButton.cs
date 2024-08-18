@@ -71,6 +71,7 @@ public class EmployeeButton : MonoBehaviour
         }
 
         walkingSprite.GetComponent<Image>().enabled = false;
+        manager.SetEmployeeOfficeSprite(employee.employeeSprite);
     }
 
     public IEnumerator ReturnToWork()

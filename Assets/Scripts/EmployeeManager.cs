@@ -18,6 +18,8 @@ public class EmployeeManager : MonoBehaviour
 
     public DeskButton fireButton;
     public DeskButton dismissButton;
+    public SpriteRenderer employeeOfficeSprite;
+
 
     public float totalProd;
     public float prodGoal = 100;
@@ -174,6 +176,7 @@ public class EmployeeManager : MonoBehaviour
         {
             Debug.Log("Dismissed");
             employeeButtons[selectedEmployee].GetComponent<EmployeeButton>().DismissEmployeeFromOffice();
+            SetEmployeeOfficeSprite(null);
         }
         else
         {
@@ -194,6 +197,11 @@ public class EmployeeManager : MonoBehaviour
         {
             Debug.Log("No selected employee");
         }
+    }
+
+    public void SetEmployeeOfficeSprite(Sprite empSprite)
+    {
+        employeeOfficeSprite.sprite = empSprite;
     }
 
     public void Hire()
