@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pages: []
+  employeeManager: {fileID: 0}
   ResumePagePrefab: {fileID: 8192827256937174958, guid: d5841b8b1cf4f8f45948ca83408874bb, type: 3}
-  distancebetweenPages: 0.002
+  distancebetweenPages: 0.01
   randomRotation: 10
   boxCollider: {fileID: 3495577720000485420}
   boxColliderBufferHeight: 0.1
