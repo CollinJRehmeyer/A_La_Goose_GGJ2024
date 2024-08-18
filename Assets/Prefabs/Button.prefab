@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1522910287871884272}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.023, z: 0}
+  m_LocalPosition: {x: -0, y: 0.0335, z: -0}
   m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -185,8 +185,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Promote!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 73208f25d930caf49be63557a8ee7a3f, type: 2}
+  m_sharedMaterial: {fileID: 2688757219110899882, guid: 73208f25d930caf49be63557a8ee7a3f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -339,7 +339,7 @@ MonoBehaviour:
   canPress: 1
   pressablePart: {fileID: 1522910287871884272}
   hoverDownOffset: 0.018
-  pressDownOffset: 0.008
+  pressDownOffset: -0.008
   onButtonPress:
     m_PersistentCalls:
       m_Calls: []
@@ -392,7 +392,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.014000006, z: 0}
-  m_LocalScale: {x: 0.16, y: 0.0566688, z: 0.16}
+  m_LocalScale: {x: 0.13862336, y: 0.04909762, z: 0.13862336}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3921480432967127597}
