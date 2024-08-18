@@ -10,6 +10,9 @@ public class ResumePage : MonoBehaviour
     public TMP_Text prodText;
     public TMP_Text salText;
     public TMP_Text passionText;
+
+    public SpriteRenderer headshotRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,7 @@ public class ResumePage : MonoBehaviour
     {
         if (employee != null)
         {
+            headshotRenderer.sprite = employee.employeeSprite;
             nameText.text = employee.name;
             prodText.text = "Prod: " + employee.productivity.ToString("F1");
             salText.text = "Sal: " + employee.salary.ToString("F1");

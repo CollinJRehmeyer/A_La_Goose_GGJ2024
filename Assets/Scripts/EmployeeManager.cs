@@ -129,9 +129,8 @@ public class EmployeeManager : MonoBehaviour
         }
     }
 
-    private void AddEmployee(Employee e, int index)
+    public void AddEmployee(Employee e, int index)
     {
-        e.employeeSprite = employeeSprites[UnityEngine.Random.Range(0, employeeSprites.Length)];
         employees.Add(e);
         GameObject empBtn = Instantiate(employeeBtnPrefab, employeeGrid.transform);
         EmployeeButton empBtnComp = empBtn.GetComponent<EmployeeButton>();
