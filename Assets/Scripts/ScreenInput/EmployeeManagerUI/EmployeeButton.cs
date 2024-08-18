@@ -70,12 +70,14 @@ public class EmployeeButton : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        GameObject.Find("Doors").GetComponent<Animator>().SetTrigger("open");
         walkingSprite.GetComponent<Image>().enabled = false;
         manager.SetEmployeeOfficeSprite(employee.employeeSprite);
     }
 
     public IEnumerator ReturnToWork()
     {
+        GameObject.Find("Doors").GetComponent<Animator>().SetTrigger("close");
         walkingSprite.GetComponent<Image>().enabled = true;
         walkingSprite.transform.localScale = new Vector3(-1, 1, 1);
 
