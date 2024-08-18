@@ -52,6 +52,7 @@ public class EmployeeManager : MonoBehaviour
             {
                 //employees.RemoveAt(selectedEmployee);
                 RemoveEmployee(employees[selectedEmployee]);
+                CameraShake.Instance.StartShake(.5f, 0.05f);
             }
             fire = false;
 
