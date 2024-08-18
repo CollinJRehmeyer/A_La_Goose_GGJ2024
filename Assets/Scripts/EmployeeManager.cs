@@ -170,23 +170,29 @@ public class EmployeeManager : MonoBehaviour
 
     public void DismissEmployee()
     {
-
         if (selectedEmployee != -1)
         {
             Debug.Log("Dismissed");
             employeeButtons[selectedEmployee].GetComponent<EmployeeButton>().DismissEmployeeFromOffice();
+        }
+        else
+        {
+            Debug.Log("No selected employee");
         }
         
     }
 
     public void FireEmployee()
     {
-        Debug.Log("FIRED!");
-
         if(selectedEmployee != -1)
         {
+            Debug.Log("FIRED!");
             RemoveEmployee(employees[selectedEmployee]);
             selectedEmployee = -1;
+        }
+        else
+        {
+            Debug.Log("No selected employee");
         }
     }
 
