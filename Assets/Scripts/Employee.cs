@@ -37,7 +37,24 @@ public class Employee
     public float moraleLossPerLeechFactor =.01f;
 
 
+    //Commented out to try and stop getting the serialization random number error
     public Employee()
+    {
+        //name = RandomName();
+
+        //salary = UnityEngine.Random.Range(minSalary, maxSalary);
+        //productivity = UnityEngine.Random.Range(minProductivity, maxProductivity);
+        //likeability = UnityEngine.Random.Range(minLikeability, maxLikeability);
+        //passion = UnityEngine.Random.Range(minPassion, maxPassion);
+        //morale = 1 + passion;
+        //moraleGainPerShip = passion/maxPassion * moraleGainPerShipFactor;
+        //moraleLossPerLeech = (1-passion/maxPassion) * moraleLossPerLeechFactor;
+
+        //totalEarned = 0;
+        //yrsAtJob = 0;
+    }
+
+    public void InitilializeEmployee()
     {
         name = RandomName();
 
@@ -46,13 +63,12 @@ public class Employee
         likeability = UnityEngine.Random.Range(minLikeability, maxLikeability);
         passion = UnityEngine.Random.Range(minPassion, maxPassion);
         morale = 1 + passion;
-        moraleGainPerShip = passion/maxPassion * moraleGainPerShipFactor;
-        moraleLossPerLeech = (1-passion/maxPassion) * moraleLossPerLeechFactor;
+        moraleGainPerShip = passion / maxPassion * moraleGainPerShipFactor;
+        moraleLossPerLeech = (1 - passion / maxPassion) * moraleLossPerLeechFactor;
 
         totalEarned = 0;
         yrsAtJob = 0;
     }
-
 
     public string RandomName()
     {

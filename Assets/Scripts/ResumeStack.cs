@@ -224,6 +224,7 @@ public class ResumeStack : MonoBehaviour
         {
             Employee e = new Employee();
             e.employeeSprite = employeeManager.employeeSprites[Random.Range(0, employeeManager.employeeSprites.Length)];
+            e.InitilializeEmployee();
             spawnedPage.employee = e;
             
             spawnedPage.PopulatePage();
