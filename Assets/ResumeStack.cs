@@ -5,6 +5,7 @@ using UnityEngine;
 public class ResumeStack : MonoBehaviour
 {
     public List<ResumePage> pages = new List<ResumePage>();
+    public EmployeeManager employeeManager;
     public GameObject ResumePagePrefab;
     public float distancebetweenPages = .02f;
     public float randomRotation = 10f;
@@ -15,7 +16,21 @@ public class ResumeStack : MonoBehaviour
     public bool canAdd = true;
     public int pagesInQueue;
     public int startingPages;
-    
+    public bool isDragging;
+    public bool pageIsHighlight;
+    public ResumePage selectedPage;
+    public Quaternion pageHighlightRotation = Quaternion.Euler(-35, -15, 0);
+    public Vector3 pageHighlightOffset = new Vector3(0, .2f, 0);
+    public Quaternion pageAcceptRotation = Quaternion.Euler(-35, 15, 0);
+    public Vector3 pageAcceptOffset = new Vector3(.3f, 0, 0);
+    public Quaternion pageRejectRotation = Quaternion.Euler(-35, -30, 0);
+    public Vector3 pageRejectOffset = new Vector3(-.3f, 0, 0);
+    public float distanceForAcceptedSwipe;
+    public float maxSwipeDistance;
+
+    private Vector3 initialMousePosition;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,12 +48,64 @@ public class ResumeStack : MonoBehaviour
         {
             AddPagesFromQueue();
         }
+        if (Input.GetMouseButtonDown(0) && pageIsHighlight)
+        {
+            if (selectedPage != null)
+            {
+                initialMousePosition = Input.mousePosition;
+                isDragging = true;
+                StopCoroutine(HighlightTopPage(selectedPage));
+                Vector3 endPos = StackPostionOfTopPage() + pageHighlightOffset;
+                Quaternion endRot = pageHighlightRotation;
+                selectedPage.transform.position = endPos;
+                selectedPage.transform.rotation = endRot;
+            }
+
+        }
+        if (isDragging)
+        {
+            if (selectedPage != null)
+            {
+                Vector3 startPos = StackPostionOfTopPage() + pageHighlightOffset;
+                Quaternion startRot = pageHighlightRotation;
+                Vector3 endPos = StackPostionOfTopPage() + pageHighlightOffset;
+                Quaternion endRot = pageHighlightRotation;
+                Vector3 currentMousePosition = Input.mousePosition;
+                float distanceX = currentMousePosition.x - initialMousePosition.x;
+                if (distanceX < 0)
+                {
+                    endPos = StackPostionOfTopPage() + pageRejectOffset + pageHighlightOffset;
+                    endRot = pageRejectRotation;
+                }
+                else
+                {
+                    endPos = StackPostionOfTopPage() + pageAcceptOffset + pageHighlightOffset;
+                    endRot = pageAcceptRotation;
+                }
+                float percentToEnd = Mathf.Abs(distanceX) / maxSwipeDistance;
+                selectedPage.transform.position = Vector3.Lerp(startPos, endPos, percentToEnd);
+                selectedPage.transform.rotation = Quaternion.Lerp(startRot, endRot, percentToEnd);
+            }
+
+
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            isDragging = false;
+            if(selectedPage != null)
+            {
+                CheckDragPositionForAccept();
+
+            }
+
+        }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         int layerMask = 1 << 7;
         // Perform the raycast
-        if (canHighlight)
+
+        if (canHighlight && !isDragging)
         {
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
             {
@@ -60,23 +127,58 @@ public class ResumeStack : MonoBehaviour
 
     }
 
+    public void CheckDragPositionForAccept()
+    {
+        Vector3 currentMousePosition = Input.mousePosition;
+        float distanceX = currentMousePosition.x - initialMousePosition.x;
+        //print("distance swiped: " + distanceX);
+        if(Mathf.Abs(distanceX)> distanceForAcceptedSwipe)
+        {
+            if (distanceX < 0)
+            {
+                RejectResume();
+            }
+            else
+            {
+                AcceptResume();
+            }
+            canAdd = true;
+        }
+    }
+
+    void RejectResume()
+    {
+        pages.Remove(selectedPage);
+        Destroy(selectedPage.gameObject);
+    }
+    void AcceptResume()
+    {
+        employeeManager.employees.Add(selectedPage.employee);
+        pages.Remove(selectedPage);
+        Destroy(selectedPage.gameObject);
+    }
+
     void OnMouseHover()
     {
-        if (isHoveringOverStack == false)
+        if (isHoveringOverStack == false && pages.Count>0)
         {
+            ResumePage pageToMove = pages[pages.Count - 1];
+            selectedPage = pageToMove;
+            pageIsHighlight = true;
             isHoveringOverStack = true;
-            StartCoroutine(HighlightTopPage(pages[pages.Count - 1]));
-            print("hovering over stack");
+            StartCoroutine(HighlightTopPage(pageToMove));
+            //print("hovering over stack");
         }
     }
 
     void OnMouseExit()
     {
-        if (isHoveringOverStack == true)
+        if (isHoveringOverStack == true && !isDragging && pages.Count > 0)
         {
+            pageIsHighlight = false;
             isHoveringOverStack = false;
             StartCoroutine(UnhighlightTopPage(pages[pages.Count - 1]));
-            print("end hovering over stack");
+            //print("end hovering over stack");
         }
     }
     public bool TryAddPagesToStack(int numPages)
@@ -158,9 +260,9 @@ public class ResumeStack : MonoBehaviour
         float timeToMove = .1f;
         float elapsedTime = 0;
         Vector3 startPos = pageToMove.transform.position;
-        Vector3 endPos = pageToMove.transform.position + new Vector3(0, .2f, 0);
+        Vector3 endPos = pageToMove.transform.position + pageHighlightOffset;
         Quaternion startRot = pageToMove.transform.rotation;
-        Quaternion endRot = Quaternion.Euler(-35, -15, 0);
+        Quaternion endRot = pageHighlightRotation;
         canAdd = false;
 
 
@@ -177,10 +279,12 @@ public class ResumeStack : MonoBehaviour
         pageToMove.transform.position = endPos;
         pageToMove.transform.rotation = endRot;
         canHighlight = true;
+        
 
     }
     IEnumerator UnhighlightTopPage(ResumePage pageToMove)
     {
+        pageIsHighlight = false;
         float timeToMove = .1f;
         float elapsedTime = 0;
         Vector3 startPos = pageToMove.transform.position;

@@ -56,6 +56,17 @@ MonoBehaviour:
   canAdd: 1
   pagesInQueue: 0
   startingPages: 0
+  isDragging: 0
+  pageIsHighlight: 0
+  selectedPage: {fileID: 0}
+  pageHighlightRotation: {x: -0.29813322, y: -0.124485046, z: -0.039249983, w: 0.9455578}
+  pageHighlightOffset: {x: 0, y: 0.2, z: 0}
+  pageAcceptRotation: {x: -0.29813322, y: 0.124485046, z: 0.039249983, w: 0.9455578}
+  pageAcceptOffset: {x: 0.3, y: 0, z: 0}
+  pageRejectRotation: {x: -0.29045948, y: -0.2468401, z: -0.077828385, w: 0.9212198}
+  pageRejectOffset: {x: -0.3, y: 0, z: 0}
+  distanceForAcceptedSwipe: 150
+  maxSwipeDistance: 300
 --- !u!65 &3495577720000485420
 BoxCollider:
   m_ObjectHideFlags: 0

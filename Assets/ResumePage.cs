@@ -28,7 +28,7 @@ public class ResumePage : MonoBehaviour
             nameText.text = employee.name;
             prodText.text = "Prod: " + employee.productivity.ToString("F1");
             salText.text = "Sal: " + employee.salary.ToString("F1");
-            //passionText.text = "Pass: " + employee.passion.ToString("F1");
+            passionText.text = "Pass: " + employee.passion.ToString("F1");
         }
         else
         {
