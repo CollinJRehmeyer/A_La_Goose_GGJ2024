@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 1a1900bf3e9f2ad419fd1a365ca7835a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,7 +141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 2688757219110899882, guid: 73208f25d930caf49be63557a8ee7a3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Promote!
+  m_text: Dismiss
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 73208f25d930caf49be63557a8ee7a3f, type: 2}
   m_sharedMaterial: {fileID: 2688757219110899882, guid: 73208f25d930caf49be63557a8ee7a3f, type: 2}
@@ -210,8 +210,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -299,6 +299,8 @@ GameObject:
   - component: {fileID: 2895845270367113319}
   - component: {fileID: 8387601840081287885}
   - component: {fileID: 842940756458187295}
+  - component: {fileID: 3930580110945896807}
+  - component: {fileID: 6908699760248000370}
   m_Layer: 7
   m_Name: Button
   m_TagString: Untagged
@@ -316,8 +318,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -20.635336, y: 0.186, z: -7.86}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5800002, y: 1.5800002, z: 1.5800002}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3921480432967127597}
   m_Father: {fileID: 0}
@@ -343,6 +345,8 @@ MonoBehaviour:
   onButtonPress:
     m_PersistentCalls:
       m_Calls: []
+  click: {fileID: 3930580110945896807}
+  release: {fileID: 6908699760248000370}
 --- !u!65 &842940756458187295
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -364,6 +368,68 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.15, y: 0.15, z: 0.15}
   m_Center: {x: 0, y: 0.01, z: 0}
+--- !u!114 &3930580110945896807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4940730436012460001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1544565795
+      Data2: 1218852797
+      Data3: 167303613
+      Data4: 1277807866
+    Path: event:/Desk Button Press
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &6908699760248000370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4940730436012460001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 596524057
+      Data2: 1274942227
+      Data3: 949184402
+      Data4: 829435937
+    Path: event:/Desk Button Release
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8960207732820794971
 GameObject:
   m_ObjectHideFlags: 0

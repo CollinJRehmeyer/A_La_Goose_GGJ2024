@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 7925652397871607480}
   - component: {fileID: 674458676188729072}
   - component: {fileID: 3495577720000485420}
+  - component: {fileID: 6579161661156383099}
+  - component: {fileID: 1735118119798173414}
+  - component: {fileID: 1266974357238936255}
+  - component: {fileID: 3272957336366331086}
   m_Layer: 7
   m_Name: ResumeStack
   m_TagString: Untagged
@@ -61,13 +65,17 @@ MonoBehaviour:
   pageIsHighlight: 0
   selectedPage: {fileID: 0}
   pageHighlightRotation: {x: -0.29813322, y: -0.124485046, z: -0.039249983, w: 0.9455578}
-  pageHighlightOffset: {x: 0, y: 0.2, z: 0}
+  pageHighlightOffset: {x: 0, y: 0.3, z: 0}
   pageAcceptRotation: {x: -0.29813322, y: 0.124485046, z: 0.039249983, w: 0.9455578}
   pageAcceptOffset: {x: 0.3, y: 0, z: 0}
   pageRejectRotation: {x: -0.29045948, y: -0.2468401, z: -0.077828385, w: 0.9212198}
   pageRejectOffset: {x: -0.3, y: 0, z: 0}
   distanceForAcceptedSwipe: 150
   maxSwipeDistance: 300
+  singleResume: {fileID: 6579161661156383099}
+  throwAway: {fileID: 1735118119798173414}
+  hire: {fileID: 1266974357238936255}
+  resumeStack: {fileID: 3272957336366331086}
 --- !u!65 &3495577720000485420
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -89,3 +97,127 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3, y: 0.001, z: 0.4}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6579161661156383099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3211407942181049255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1058036007
+      Data2: 1309471456
+      Data3: -132354379
+      Data4: -297217425
+    Path: event:/Single Resume Spawn
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1735118119798173414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3211407942181049255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1465579140
+      Data2: 1159019151
+      Data3: 2096927874
+      Data4: -1093112529
+    Path: event:/Throwing Away Resume
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1266974357238936255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3211407942181049255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1925361396
+      Data2: 1295600853
+      Data3: -1064843891
+      Data4: 1576257843
+    Path: event:/Hiring Employee
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &3272957336366331086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3211407942181049255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 720500335
+      Data2: 1122016862
+      Data3: -1443436385
+      Data4: 714563281
+    Path: event:/Stack Resume Spawn
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

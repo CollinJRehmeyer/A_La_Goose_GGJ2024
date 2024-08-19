@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class DeskButton : MonoBehaviour
     public float hoverDownOffset;
     public float pressDownOffset;
     public UnityEvent onButtonPress;
+    public StudioEventEmitter click;
+    public StudioEventEmitter release;
 
     // Start is called before the first frame update
     void Start()
@@ -28,15 +31,20 @@ public class DeskButton : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && isHovering)
         {
             onButtonPress.Invoke();
+            click.Play();
             SetButtonPressedPostion(pressDownOffset);
-;
+;           isPressed = true;
         }
         
         if (Input.GetMouseButtonUp(0))
         {
-
-            if (isHovering)
+                if (isHovering)
             {
+                if (isPressed)
+                {
+                    release.Play();
+                    isPressed = false;
+                }
                 SetButtonPressedPostion(hoverDownOffset);
             }
             else
@@ -87,6 +95,11 @@ public class DeskButton : MonoBehaviour
         if (isHovering == true)
         {
 
+            if (isPressed)
+            {
+                release.Play();
+                isPressed = false;
+            }
             isHovering = false;
             SetButtonPressedPostion(initialOffset);
 

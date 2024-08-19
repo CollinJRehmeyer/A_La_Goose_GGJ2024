@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5479639551180323854}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -45,8 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   employeeManager: {fileID: 0}
-  PAY_TIMESCALE: 3
-  ADD_VALUE_TIMESCALE: 1
+  PAY_TIMESCALE: 30
+  ADD_VALUE_TIMESCALE: 0.1
+  payTimer: 0
+  addValueTimer: 0
   payTimerSlider: {fileID: 0}
   addValueTimerSlider: {fileID: 0}
   expectedValueReadout: {fileID: 0}
