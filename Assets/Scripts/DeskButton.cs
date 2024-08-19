@@ -41,10 +41,7 @@ public class DeskButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SetButtonActive(!canPress);
-        }
+        
         if (canPress)
         {
             if (Input.GetMouseButtonDown(0) && isHovering)
