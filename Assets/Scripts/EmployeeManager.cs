@@ -20,12 +20,17 @@ public class EmployeeManager : MonoBehaviour
 
     public DeskButton fireButton;
     public DeskButton dismissButton;
+    public DeskButton startProjectButton;
     public SpriteRenderer employeeOfficeSprite;
 
 
     public float totalProd;
+    public int totalProjectsCompleted = 0;
     public float prodGoal = 100;
+    private float startingProdGoal;
     public float prodReward = 1;
+    private float startingProdReward;
+    public int completedProjectsBeforeRewardIncrease;
     public float totalCost;
     public float avgLikeability;
     public float avgMorale;
@@ -40,6 +45,7 @@ public class EmployeeManager : MonoBehaviour
     public Text employeeLedgerText;
     public bool fire;
     public bool hire;
+    public bool isWorkingOnProject;
 
     public int selectedEmployee;
 
@@ -50,6 +56,9 @@ public class EmployeeManager : MonoBehaviour
 
         fireButton.onButtonPress.AddListener(FireEmployee);
         dismissButton.onButtonPress.AddListener(DismissEmployee);
+        startProjectButton.onButtonPress.AddListener(StartWorkingOnProject);
+        startingProdGoal = prodGoal;
+        startingProdReward = prodReward;
     }
 
     private void Update()
@@ -87,6 +96,8 @@ public class EmployeeManager : MonoBehaviour
         {
             ShipProduct();
             totalProd = 0;
+            isWorkingOnProject = false;
+
         }
 
         totalCost = CalculateCost();
@@ -225,17 +236,34 @@ public class EmployeeManager : MonoBehaviour
         totalProd += CalculateProductivity();
         
     }
+    public void StartWorkingOnProject()
+    {
+        if (!isWorkingOnProject)
+        {
+            isWorkingOnProject = true;
+            float projectIncreaseFactor = Mathf.Floor(totalProjectsCompleted / completedProjectsBeforeRewardIncrease);
+            print("project increase factor: " + projectIncreaseFactor);
+            prodGoal =  startingProdGoal + projectIncreaseFactor * startingProdGoal;
+            prodReward = startingProdReward + projectIncreaseFactor * startingProdReward;
+        }
+    }
     public void WorkEmployees()
     {
-        AddProgressToShip();
-        foreach (Employee e in employees)
+        if (isWorkingOnProject)
         {
-            e.morale -= e.moraleLossPerLeech;
-            if (e.morale < 0)
+            AddProgressToShip();
+            foreach (Employee e in employees)
             {
-                e.morale = 0;
+                e.morale -= e.moraleLossPerLeech;
+                if (e.morale < 0)
+                {
+                    e.morale = 0;
+
+                }
+                print("morale: " + e.morale);
             }
         }
+        
 
     }
 
@@ -260,6 +288,7 @@ public class EmployeeManager : MonoBehaviour
     private void ShipProduct()
     {
         totalValue += prodReward;
+        totalProjectsCompleted++;
         foreach (Employee e in employees)
         {
             e.successfulShips++;
@@ -304,7 +333,7 @@ public class EmployeeManager : MonoBehaviour
         float totalMorale = 0;
         foreach (Employee e in employees)
         {
-            totalMorale += e.likeability;
+            totalMorale += e.morale;
         }
 
         return (totalMorale / employees.Count);

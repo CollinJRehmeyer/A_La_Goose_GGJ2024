@@ -34,7 +34,7 @@ public class Employee
     public float minSalary = 1;
 
     public float moraleGainPerShipFactor = 1;
-    public float moraleLossPerLeechFactor =.01f;
+    public float moraleLossPerLeechFactor =.05f;
 
 
     //Commented out to try and stop getting the serialization random number error
@@ -123,7 +123,7 @@ public class Employee
 
     public string StatsString()
     {
-        return name + "- " + "Age: " + yrsAtJob + ", Salary: " + salary + ", Prod: " + productivity + ", Likeability: " + likeability;
+        return name + "- " + "LossPerLeech: " + moraleLossPerLeech + ", Salary: " + salary + ", Prod: " + productivity + ", Likeability: " + likeability;
     }
 
 }

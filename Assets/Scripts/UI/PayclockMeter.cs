@@ -17,7 +17,7 @@ public class PayclockMeter : MonoBehaviour
     void Update()
     {
         meter.inputAmount = gameManager.payTimer / gameManager.PAY_TIMESCALE;
-        print(meter.inputAmount + "   pay timer " + gameManager.payTimer + " / timescale: "+ gameManager.PAY_TIMESCALE );
+        //print(meter.inputAmount + "   pay timer " + gameManager.payTimer + " / timescale: "+ gameManager.PAY_TIMESCALE );
 
     }
 }
