@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class DeskButton : MonoBehaviour
 {
@@ -13,32 +14,67 @@ public class DeskButton : MonoBehaviour
     private float initialOffset;
     public float hoverDownOffset;
     public float pressDownOffset;
-    public UnityEvent onButtonPress;
     public StudioEventEmitter click;
     public StudioEventEmitter release;
+    public Material activatedMaterial;
+    public bool useCurrentMaterialAsActivatedMaterial = true;
+    public Material deactivatedMaterial;
+    public MeshRenderer buttonMesh;
+    public bool hideLabelOnDeactivate;
+    public bool showLabelOnActivate;
+    public GameObject label;
+    public UnityEvent onButtonPress;
+
 
     // Start is called before the first frame update
     void Start()
     {
         initialOffset = pressablePart.transform.localPosition.y;
+        if (useCurrentMaterialAsActivatedMaterial)
+        {
+            activatedMaterial = buttonMesh.material;
+        }
+        SetButtonActive(canPress);
+           
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
-        if (Input.GetMouseButtonDown(0) && isHovering)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            onButtonPress.Invoke();
-            click.Play();
-            SetButtonPressedPostion(pressDownOffset);
-;           isPressed = true;
+            SetButtonActive(!canPress);
         }
+        if (canPress)
+        {
+            if (Input.GetMouseButtonDown(0) && isHovering)
+            {
+                onButtonPress.Invoke();
+                click.Play();
+                SetButtonPressedPostion(pressDownOffset);
+                isPressed = true;
+
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                if (isHovering)
+                {
+                    if (isPressed)
+                    {
+                        release.Play();
+                        isPressed = false;
+                    }
+                    SetButtonPressedPostion(hoverDownOffset);
+                }
+
+            }
+
+        }
+       
         
         if (Input.GetMouseButtonUp(0))
         {
-                if (isHovering)
+            if (isHovering &&canPress)
             {
                 if (isPressed)
                 {
@@ -47,10 +83,15 @@ public class DeskButton : MonoBehaviour
                 }
                 SetButtonPressedPostion(hoverDownOffset);
             }
-            else
-            {
-                SetButtonPressedPostion(initialOffset);
-            }
+            //else
+            //{
+            //    if (canPress)
+            //    {
+            //        SetButtonPressedPostion(initialOffset);
+            //    }
+                
+                
+            //}
         }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -58,8 +99,8 @@ public class DeskButton : MonoBehaviour
         int layerMask = 1 << 7;
         // Perform the raycast
 
-        if (canPress)
-        {
+        //if (canPress)
+        //{
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
             {
                 // Check if the object hit by the raycast is this GameObject
@@ -76,16 +117,18 @@ public class DeskButton : MonoBehaviour
             {
                 OnMouseExit();
             }
-        }
+        //}
 
     }
     void OnMouseHover()
     {
         if (isHovering == false)
         {
-
+            if (canPress)
+            {
+                SetButtonPressedPostion(hoverDownOffset);
+            }
             isHovering = true;
-            SetButtonPressedPostion(hoverDownOffset);
 
         }
     }
@@ -101,7 +144,11 @@ public class DeskButton : MonoBehaviour
                 isPressed = false;
             }
             isHovering = false;
-            SetButtonPressedPostion(initialOffset);
+            if (canPress)
+            {
+                SetButtonPressedPostion(initialOffset);
+
+            }
 
 
         }
@@ -114,4 +161,37 @@ public class DeskButton : MonoBehaviour
         pressablePart.transform.localPosition = new Vector3(pressablePart.transform.localPosition.x, offset, pressablePart.transform.localPosition.z);
 
     }
+    public void SetButtonActive(bool allowPress)
+    {
+        canPress = allowPress;
+        if (canPress)
+        {
+            buttonMesh.material = activatedMaterial;
+            if (showLabelOnActivate)
+            {
+                label.SetActive(true);
+            }
+            if (isHovering)
+            {
+                SetButtonPressedPostion(hoverDownOffset);
+            }
+            else
+            {
+                SetButtonPressedPostion(initialOffset);
+            }
+
+
+        }
+        else
+        {
+            buttonMesh.material = deactivatedMaterial;
+            if (hideLabelOnDeactivate)
+            {
+                label.SetActive(false);
+            }
+            SetButtonPressedPostion(pressDownOffset);
+        }
+
+    }
+
 }
