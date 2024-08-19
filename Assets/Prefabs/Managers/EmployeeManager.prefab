@@ -157,10 +157,13 @@ MonoBehaviour:
   elevator: {fileID: 0}
   fireButton: {fileID: 0}
   dismissButton: {fileID: 0}
+  startProjectButton: {fileID: 0}
   employeeOfficeSprite: {fileID: 0}
   totalProd: 0
+  totalProjectsCompleted: 0
   prodGoal: 1000
   prodReward: 10
+  completedProjectsBeforeRewardIncrease: 3
   totalCost: 0
   avgLikeability: 0
   avgMorale: 0
@@ -174,4 +177,5 @@ MonoBehaviour:
   employeeLedgerText: {fileID: 0}
   fire: 0
   hire: 0
+  isWorkingOnProject: 0
   selectedEmployee: -1
