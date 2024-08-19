@@ -17,7 +17,7 @@ public class DepartmentManager : MonoBehaviour
 
     private void Start()
     {
-        acquireDeptButton.onButtonPress.AddListener(AddDepartment);
+        acquireDeptButton.onButtonPress.AddListener(AcquireNewDepartment);
 
         foreach (GameObject obj in departmentObjs)
         {
@@ -28,6 +28,35 @@ public class DepartmentManager : MonoBehaviour
     private void Update()
     {
         
+    }
+
+
+    public void AcquireNewDepartment()
+    {
+        if (newDeptIndex < departmentObjs.Length)
+        {
+            companyHead.GetComponent<Animator>().SetTrigger("department");
+            StartCoroutine(AcquiringDept());
+        }
+    }
+
+    public IEnumerator AcquiringDept()
+    {
+        float animTime = 3.3f;
+        float timer = 0;
+
+        Vector3 startPos = companyHead.transform.localPosition;
+        Vector3 newPos = new Vector3(companyHead.transform.localPosition.x, companyHead.transform.localPosition.y + 89, companyHead.transform.localPosition.z);
+
+        while(timer < animTime)
+        {
+            companyHead.transform.localPosition = Vector3.Lerp(startPos, newPos, timer / animTime);
+            timer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+        companyHead.transform.localPosition = newPos;
+        AddDepartment();
     }
 
 
