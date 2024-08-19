@@ -9,12 +9,16 @@ public class EmployeeManager : MonoBehaviour
     public List<Employee> employees = new List<Employee>();
     public List<GameObject> employeeButtons = new List<GameObject>();
 
+    public DepartmentManager deptManager;
+
     public Sprite[] employeeSprites;
 
     public GameObject employeeGrid;
     public GameObject employeeBtnPrefab;
 
     public GameObject elevatorMarker;
+
+    public EmployeeInspectWidget employeeInspectWidget;
 
     public Animator elevator;
 
@@ -49,6 +53,8 @@ public class EmployeeManager : MonoBehaviour
 
     public int selectedEmployee;
 
+    public float fireAnimDelay;
+
     private void Start()
     {
         PopulateEmployeeList();
@@ -69,7 +75,6 @@ public class EmployeeManager : MonoBehaviour
         {
             if (selectedEmployee < employees.Count)
             {
-                //employees.RemoveAt(selectedEmployee);
                 RemoveEmployee(employees[selectedEmployee]);
                 CameraShake.Instance.StartShake(.5f, 0.05f);
             }
@@ -203,9 +208,11 @@ public class EmployeeManager : MonoBehaviour
         if(selectedEmployee != -1)
         {
             Debug.Log("FIRED!");
+            employeeInspectWidget.visContainer.SetActive(false);
             RemoveEmployee(employees[selectedEmployee]);
             selectedEmployee = -1;
             GameObject.Find("Doors").GetComponent<Animator>().SetTrigger("close");
+            StartCoroutine(FireEmployeeFromCannon());
         }
         else
         {
@@ -267,6 +274,12 @@ public class EmployeeManager : MonoBehaviour
 
     }
 
+    private IEnumerator FireEmployeeFromCannon()
+    {
+        yield return new WaitForSeconds(fireAnimDelay);
+
+        deptManager.companyHead.GetComponent<Animator>().SetTrigger("shoot");
+    }
 
     public void PayEmployeeSalaries()
     {

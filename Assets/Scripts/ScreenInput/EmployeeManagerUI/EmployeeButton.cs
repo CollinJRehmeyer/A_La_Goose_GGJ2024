@@ -28,9 +28,9 @@ public class EmployeeButton : MonoBehaviour
             button.image.sprite = employee.employeeSprite;
         }
 
-        if(walkingSprite.GetComponent<Image>().sprite != employee.employeeSprite)
+        if(walkingSprite.GetComponent<SpriteRenderer>().sprite != employee.employeeSprite)
         {
-            walkingSprite.GetComponent<Image>().sprite = employee.employeeSprite;
+            walkingSprite.GetComponent<SpriteRenderer>().sprite = employee.employeeSprite;
         }
 
     }
@@ -86,7 +86,7 @@ public class EmployeeButton : MonoBehaviour
         GameObject.Find("Doors").GetComponent<Animator>().SetTrigger("open");
         elevator = GameObject.Find("Doors").GetComponent <StudioEventEmitter>();
         elevator.Play();
-        walkingSprite.GetComponent<Image>().enabled = false;
+        walkingSprite.GetComponent<SpriteRenderer>().enabled = false;
         manager.SetEmployeeOfficeSprite(employee.employeeSprite);
     }
 
@@ -95,8 +95,8 @@ public class EmployeeButton : MonoBehaviour
         GameObject.Find("Doors").GetComponent<Animator>().SetTrigger("close");
         elevator = GameObject.Find("Doors").GetComponent<StudioEventEmitter>();
         elevator.Play();
-        walkingSprite.GetComponent<Image>().enabled = true;
-        walkingSprite.transform.localScale = new Vector3(-1, 1, 1);
+        walkingSprite.GetComponent<SpriteRenderer>().enabled = true;
+        walkingSprite.GetComponent<SpriteRenderer>().flipX = true;
 
         while (walkingSprite.transform.position.x > transform.position.x)
         {
@@ -109,7 +109,7 @@ public class EmployeeButton : MonoBehaviour
         button.interactable = true;
         manager.selectedEmployee = -1;
 
-        walkingSprite.transform.localScale = new Vector3(1, 1, 1);
+        walkingSprite.GetComponent<SpriteRenderer>().flipX = false;
     }
 
 }

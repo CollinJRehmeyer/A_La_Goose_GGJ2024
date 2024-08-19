@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class EnemyBuilding : MonoBehaviour
 {
     public List<GameObject> floorObjs;
-    public ResumeStack resumes;
+    public EnemyManager enemyManager;
     public int employeesInBuilding;
     public int numFloors;
     public float speed;
@@ -37,9 +37,17 @@ public class EnemyBuilding : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Tank"))
         {
-            Debug.Log("Collided with Tank");
-            resumes.TryAddPagesToStack(employeesInBuilding);
-            Destroy(gameObject);
+            //Debug.Log("My floors: " + numFloors + ", Tank Floors: " + (enemyManager.deptManager.newDeptIndex + 1));
+            if(numFloors < (enemyManager.deptManager.newDeptIndex + 2))
+            {
+                DestroyBuilding();
+            }
         }
+    }
+
+    public void DestroyBuilding()
+    {
+        enemyManager.resumes.TryAddPagesToStack(employeesInBuilding);
+        Destroy(gameObject);
     }
 }
