@@ -14,6 +14,7 @@ public class EmployeeButton : MonoBehaviour
     public EmployeeManager manager;
     public GameObject walkingSprite;
     public StudioEventEmitter elevator;
+     
 
     private void Start()
     {
@@ -38,12 +39,22 @@ public class EmployeeButton : MonoBehaviour
 
     public void SelectEmployee()
     {
-        if(manager.selectedEmployee == -1)
+        if (manager.selectedEmployee == -1)
         {
-            Debug.Log(employee.StatsString());
-            manager.selectedEmployee = manager.employees.IndexOf(employee);
-            SummonEmployeeToOffice();
+            if (EmployeeInspectWidget.Instance.selectedEmployee == employee)
+            {
+                manager.selectedEmployee = manager.employees.IndexOf(employee);
+                SummonEmployeeToOffice();
+            }
+            else
+            {
+                EmployeeInspectWidget.Instance.SetEmployee(employee);
+                Debug.Log(employee.StatsString());
+            }
+            
+            
         }
+
         else
         {
             Debug.Log("There is already a selected employee: " + manager.selectedEmployee);
