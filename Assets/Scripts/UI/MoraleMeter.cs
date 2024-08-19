@@ -16,8 +16,8 @@ public class MoraleMeter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        meter.inputAmount = employeeManager.avgMorale;
-        moraleTicker.value = employeeManager.avgMorale;
+        meter.inputAmount = employeeManager.CalculateAvgMorale();
+        moraleTicker.value = employeeManager.CalculateAvgMorale();
         //print("employee morale" + employeeManager.avgMorale);
     }
 }
