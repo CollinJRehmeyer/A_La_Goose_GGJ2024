@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5479639551180323854
+--- !u!1 &1042983790956245963
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,58 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4812153682551899315}
-  - component: {fileID: 6141275725957058521}
+  - component: {fileID: 1708829275497734242}
+  - component: {fileID: 6775964259862531638}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4812153682551899315
+--- !u!4 &1708829275497734242
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5479639551180323854}
+  m_GameObject: {fileID: 1042983790956245963}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -28.501284, y: -22.301271, z: 31.097277}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6141275725957058521
+--- !u!114 &6775964259862531638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5479639551180323854}
+  m_GameObject: {fileID: 1042983790956245963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0f909e349157b14e8b33fb00180c1a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  employeeManager: {fileID: 0}
-  PAY_TIMESCALE: 30
-  ADD_VALUE_TIMESCALE: 0.1
-  payTimer: 0
-  addValueTimer: 0
-  payTimerSlider: {fileID: 0}
-  addValueTimerSlider: {fileID: 0}
-  expectedValueReadout: {fileID: 0}
-  expectedValueTracker: {fileID: 0}
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 963497056
+      Data2: 1184531469
+      Data3: 1339800984
+      Data4: -806423695
+    Path: event:/Music
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

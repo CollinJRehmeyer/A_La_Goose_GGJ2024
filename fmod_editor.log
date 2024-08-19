@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000002EACCE15CC8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001B6BD01D4B8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,13 +16,449 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B532FEEF8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC3C534130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC3C5340F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC3C534210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC3C5342D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001B63DC076C8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Paper - Trimmed', format=5, channels=2, frequency=48000, lengthbytes=3552, lengthpcm=15986, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.066986.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B532FEEF8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC3C534130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC3C5340F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC3C534210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC3C5342D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001B63DC076C8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Paper - Trimmed (3)', format=5, channels=2, frequency=48000, lengthbytes=2272, lengthpcm=9252, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.115448.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B532FEEF8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC3C534130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC3C5340F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC3C534210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC3C5342D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001B6BB7B4EE8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='zapsplat_impacts_metal_pot_pan_hit_empty_clang_001_76754 - Trimmed', format=5, channels=2, frequency=48000, lengthbytes=13600, lengthpcm=54000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.706970.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B532FEEF8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC3C534130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC3C5340F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC3C534210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC3C5342D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001B6BB7B4EE8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='zapsplat_impact_metal_pan_or_tray_thick_hit_001_107225 - Trimmed', format=5, channels=2, frequency=48000, lengthbytes=12992, lengthpcm=53743, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.706970.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B532FEEF8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC3C534130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC3C5340F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC3C534210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC3C5342D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001B6BB7B4EE8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='zapsplat_impact_metal_pan_or_tray_thick_hit_002_107226 - Trimmed', format=5, channels=2, frequency=48000, lengthbytes=11392, lengthpcm=48265, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.706970.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B532FEEF8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC3C534130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC3C5340F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC3C534210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC3C5342D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001B6BB7B4EE8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='zapsplat_foley_paper_sheets_several_handling_lighty_crumpling_002_84585 - Trimmed', format=5, channels=2, frequency=48000, lengthbytes=14496, lengthpcm=48000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.641144.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B532FEEF8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC3C534130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC3C5340F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC3C534210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC3C5342D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001B6BB7B4EE8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='zapsplat_foley_paper_sheets_several_handling_lighty_crumpling_001_84584 - Trimmed', format=5, channels=2, frequency=48000, lengthbytes=12864, lengthpcm=48000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.706970.
+[LOG] SystemI::createSound                     : filename = Assets/FMODBanks/Desktop/Sounds.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001B7369B5D38, queue head = 000001B61B62FCD8, queue count = 0
+[LOG] SystemI::createSound                     : filename = Assets/FMODBanks/Desktop/Sounds.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B7369B5D38
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001B7369B5678, queue head = 000001B61B62FCD8, queue count = 0
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMODBanks/Desktop/Sounds.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     filename = Assets/FMODBanks/Desktop/Sounds.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 8938784
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 000001B7369B4238, queue head = 000001B61B62FCD8, queue count = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B6BE03FE90
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='yfs_canadian_ferry_before_departure_on_board_2', format=5, channels=2, frequency=48000, lengthbytes=1168000, lengthpcm=4799731, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.116207.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B7369B5D38
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B7369B5678
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMODBanks/Desktop/Sounds.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B6BE040750
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='sound_spark_Industrial_Spaces_04', format=5, channels=2, frequency=48000, lengthbytes=421696, lengthpcm=1645420, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.305678.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B7369B5678
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B7369B4238
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMODBanks/Desktop/Sounds.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B6BE03F990
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='344_audio_int_torture_chamber_screams_bangs_metal_shouts_pain_drill_presence_reverb_817', format=5, channels=2, frequency=48000, lengthbytes=2216480, lengthpcm=8640000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.702988.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B7369B4238
+[LOG] SoundI::release                          : sound_spark_Industrial_Spaces_04 (000001B6B94DA278)
+[LOG] SoundI::release                          :     sound_spark_Industrial_Spaces_04 (000001B5AD614238)
+[LOG] SoundI::release                          :     sound_spark_Industrial_Spaces_04 (000001B6BFCF15A8)
+[LOG] SoundI::release                          : yfs_canadian_ferry_before_departure_on_board_2 (000001B6B94D6E28)
+[LOG] SoundI::release                          :     yfs_canadian_ferry_before_departure_on_board_2 (000001B5AD615418)
+[LOG] SoundI::release                          :     yfs_canadian_ferry_before_departure_on_board_2 (000001B6BFCF1098)
+[LOG] SoundI::release                          : 344_audio_int_torture_chamber_screams_bangs_metal_shouts_pain_drill_presence_reverb_817 (000001B6B94D9A08)
+[LOG] SoundI::release                          :     344_audio_int_torture_chamber_screams_bangs_metal_shouts_pain_drill_presence_reverb_817 (000001B5AD948C08)
+[LOG] SoundI::release                          :     344_audio_int_torture_chamber_screams_bangs_metal_shouts_pain_drill_presence_reverb_817 (000001B6BFCF7788)
+[LOG] SystemI::createSound                     : filename = Assets/FMODBanks/Desktop/Sounds.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001B7369B4E08, queue head = 000001B61B62FCD8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B7369B4E08
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMODBanks/Desktop/Sounds.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B6BE03FFD0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 97
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Right Sizing (2) - Trimmed', format=5, channels=2, frequency=48000, lengthbytes=537664, lengthpcm=2001600, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.329742.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B7369B4E08
+[LOG] SoundI::release                          : Right Sizing (2) - Trimmed (000001B6B94D94F8)
+[LOG] SoundI::release                          :     Right Sizing (2) - Trimmed (000001B5AD614D98)
+[LOG] SoundI::release                          :     Right Sizing (2) - Trimmed (000001B6BFCF1FC8)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B532FEEF8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC3C534130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC3C5340F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC3C534210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC3C5342D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001B63D5AE528
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='zapsplat_office_calculator_button_press_single_001_11983 - Trimmed', format=5, channels=2, frequency=48000, lengthbytes=768, lengthpcm=1460, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.891205.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B532FEEF8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC3C534130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC3C5340F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC3C534210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC3C5342D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001B63D5AE528
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='zapsplat_office_calculator_button_press_single_002_11984 - Trimmed - Trimmed - Trimmed', format=5, channels=2, frequency=48000, lengthbytes=896, lengthpcm=1460, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.891205.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B532FEEF8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC3C534130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC3C5340F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC3C534210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC3C5342D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001B63D5AC638
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='zapsplat_office_calculator_button_press_single_002_11985 - Trimmed - Trimmed - Trimmed', format=5, channels=2, frequency=48000, lengthbytes=768, lengthpcm=1223, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.486755.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B532FEEF8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC3C534130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC3C5340F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC3C534210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC3C5342D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001B63D5AC638
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='zapsplat_office_calculator_button_press_single_001_11984 - Trimmed', format=5, channels=2, frequency=48000, lengthbytes=800, lengthpcm=1984, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.563171.
+[LOG] SystemI::createSound                     : filename = Assets/FMODBanks/Desktop/Sounds.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001B669D605A8, queue head = 000001B61B62FCD8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B669D605A8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMODBanks/Desktop/Sounds.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B67926EB80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Hiring Employee', format=5, channels=2, frequency=48000, lengthbytes=44576, lengthpcm=1451338, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.068146.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B669D605A8
+[LOG] SoundI::release                          : Hiring Employee (000001B669D605A8)
+[LOG] SoundI::release                          :     Hiring Employee (000001B5AD946A58)
+[LOG] SoundI::release                          :     Hiring Employee (000001B6BFCF3258)
+[LOG] SystemI::createSound                     : filename = Assets/FMODBanks/Desktop/Sounds.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001B7369B4088, queue head = 000001B61B62FCD8, queue count = 0
+[LOG] SystemI::createSound                     : filename = Assets/FMODBanks/Desktop/Sounds.bank : mode 02010082
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B7369B4088
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMODBanks/Desktop/Sounds.bank', mode=0x02010082
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 000001B7369B48F8, queue head = 000001B61B62FCD8, queue count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     filename = Assets/FMODBanks/Desktop/Sounds.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 63520
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B6BE03FAD0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 000001B6B93DDE28, queue head = 000001B61B62FCD8, queue count = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='yfs_canadian_ferry_before_departure_on_board_2', format=5, channels=2, frequency=48000, lengthbytes=1168000, lengthpcm=4799731, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.116207.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B7369B4088
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B7369B48F8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMODBanks/Desktop/Sounds.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B6BE040250
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='sound_spark_Industrial_Spaces_04', format=5, channels=2, frequency=48000, lengthbytes=421696, lengthpcm=1645420, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.305678.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B7369B48F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B6B93DDE28
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMODBanks/Desktop/Sounds.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B6BE040390
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='344_audio_int_torture_chamber_screams_bangs_metal_shouts_pain_drill_presence_reverb_817', format=5, channels=2, frequency=48000, lengthbytes=2216480, lengthpcm=8640000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.702988.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B6B93DDE28
+[LOG] SoundI::release                          : 344_audio_int_torture_chamber_screams_bangs_metal_shouts_pain_drill_presence_reverb_817 (000001B7369B4238)
+[LOG] SoundI::release                          :     344_audio_int_torture_chamber_screams_bangs_metal_shouts_pain_drill_presence_reverb_817 (000001B790FC4BF8)
+[LOG] SoundI::release                          :     344_audio_int_torture_chamber_screams_bangs_metal_shouts_pain_drill_presence_reverb_817 (000001B6BC93CC18)
+[LOG] SoundI::release                          : sound_spark_Industrial_Spaces_04 (000001B7369B5678)
+[LOG] SoundI::release                          :     sound_spark_Industrial_Spaces_04 (000001B790FC43D8)
+[LOG] SoundI::release                          :     sound_spark_Industrial_Spaces_04 (000001B6BC93CDC8)
+[LOG] SoundI::release                          : yfs_canadian_ferry_before_departure_on_board_2 (000001B7369B5D38)
+[LOG] SoundI::release                          :     yfs_canadian_ferry_before_departure_on_board_2 (000001B790FC48B8)
+[LOG] SoundI::release                          :     yfs_canadian_ferry_before_departure_on_board_2 (000001B6BC93CA68)
+[LOG] SystemI::createSound                     : filename = Assets/FMODBanks/Desktop/Sounds.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001B6B93DE188, queue head = 000001B61B62FCD8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B6B93DE188
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMODBanks/Desktop/Sounds.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B6BE040110
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Hiring Employee', format=5, channels=2, frequency=48000, lengthbytes=44576, lengthpcm=1451338, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.068146.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B6B93DE188
+[LOG] SoundI::release                          : Hiring Employee (000001B6B93DE188)
+[LOG] SoundI::release                          :     Hiring Employee (000001B74051E708)
+[LOG] SoundI::release                          :     Hiring Employee (000001B63F2B76F8)
+[LOG] SystemI::createSound                     : filename = Assets/FMODBanks/Desktop/Sounds.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001B6B93DE188, queue head = 000001B61B62FCD8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B6B93DE188
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMODBanks/Desktop/Sounds.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B6BE0404D0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Hiring Employee', format=5, channels=2, frequency=48000, lengthbytes=44576, lengthpcm=1451338, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.068146.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B6B93DE188
+[LOG] SoundI::release                          : Hiring Employee (000001B6B93DE188)
+[LOG] SoundI::release                          :     Hiring Employee (000001B6600ED6E8)
+[LOG] SoundI::release                          :     Hiring Employee (000001B63F2B7398)
+[LOG] SystemI::createSound                     : filename = Assets/FMODBanks/Desktop/Sounds.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001B741452698, queue head = 000001B61B62FCD8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B741452698
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMODBanks/Desktop/Sounds.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 8938784
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 63520
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B6BE803470
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 97
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Right Sizing (2) - Trimmed', format=5, channels=2, frequency=48000, lengthbytes=537664, lengthpcm=2001600, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.329742.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B741452698
+[LOG] SoundI::release                          : Right Sizing (2) - Trimmed (000001B7369B4E08)
+[LOG] SoundI::release                          :     Right Sizing (2) - Trimmed (000001B76758D758)
+[LOG] SoundI::release                          :     Right Sizing (2) - Trimmed (000001B7631A8248)
+[LOG] SoundI::release                          : 344_audio_int_torture_chamber_screams_bangs_metal_shouts_pain_drill_presence_reverb_817 (000001B6B93DDE28)
+[LOG] SoundI::release                          :     344_audio_int_torture_chamber_screams_bangs_metal_shouts_pain_drill_presence_reverb_817 (000001B6BFEF6688)
+[LOG] SoundI::release                          :     344_audio_int_torture_chamber_screams_bangs_metal_shouts_pain_drill_presence_reverb_817 (000001B6BFCF2B98)
+[LOG] SoundI::release                          : sound_spark_Industrial_Spaces_04 (000001B7369B48F8)
+[LOG] SoundI::release                          :     sound_spark_Industrial_Spaces_04 (000001B6BFEF61A8)
+[LOG] SoundI::release                          :     sound_spark_Industrial_Spaces_04 (000001B6BFCF4338)
+[LOG] SoundI::release                          : yfs_canadian_ferry_before_departure_on_board_2 (000001B7369B4088)
+[LOG] SoundI::release                          :     yfs_canadian_ferry_before_departure_on_board_2 (000001B5AD615418)
+[LOG] SoundI::release                          :     yfs_canadian_ferry_before_departure_on_board_2 (000001B6BFCF1FC8)
+[LOG] SoundI::release                          : Right Sizing (2) - Trimmed (000001B741452698)
+[LOG] SoundI::release                          :     Right Sizing (2) - Trimmed (000001B662A44C88)
+[LOG] SoundI::release                          :     Right Sizing (2) - Trimmed (000001B63F2B76F8)
+[LOG] SoundI::release                          :  (000001B6BE3DC038)
+[LOG] SoundI::release                          :     zapsplat_office_calculator_button_press_single_001_11984 - Trimmed (000001B5AD615278)
+[LOG] SoundI::release                          :  (000001B6BE3DD8A8)
+[LOG] SoundI::release                          :     zapsplat_office_calculator_button_press_single_002_11985 - Trimmed - Trimmed - Trimmed (000001B5AD614A58)
+[LOG] SoundI::release                          :  (000001B739F4F688)
+[LOG] SoundI::release                          :     Paper - Trimmed (000001B7408FA2A8)
+[LOG] SoundI::release                          :  (000001B739F52488)
+[LOG] SoundI::release                          :     Paper - Trimmed (3) (000001B73A006D88)
+[LOG] SoundI::release                          :  (000001B661E1E358)
+[LOG] SoundI::release                          :     344_audio_VOXScrm_Female_Blood_Curdling_Scream_1_344_Audio_Screaming_1861 (000001B7408FA5E8)
+[LOG] SoundI::release                          :  (000001B661E1E078)
+[LOG] SoundI::release                          :     344_audio_VOXScrm_Female_Blood_Curdling_Scream_2_344_Audio_Screaming_1862 (000001B6B82FF3F8)
+[LOG] SoundI::release                          :  (000001B661E20A28)
+[LOG] SoundI::release                          :     smartsound_HUMAN_VOCAL_Male_Scream_Deep_Pain_Hard_01 (000001B6B82FF8D8)
+[LOG] SoundI::release                          :  (000001B661E1E1E8)
+[LOG] SoundI::release                          :     smartsound_HUMAN_VOCAL_Male_Scream_Deep_Pain_Hard_02 (000001B6B82FF598)
+[LOG] SoundI::release                          :  (000001B74072CA78)
+[LOG] SoundI::release                          :     zapsplat_impact_metal_pan_or_tray_thick_hit_001_107225 - Trimmed (000001B6B3D67148)
+[LOG] SoundI::release                          :  (000001B74072CBE8)
+[LOG] SoundI::release                          :     zapsplat_impact_metal_pan_or_tray_thick_hit_002_107226 - Trimmed (000001B6B3D665E8)
+[LOG] SoundI::release                          :  (000001B74072D038)
+[LOG] SoundI::release                          :     zapsplat_impacts_metal_pot_pan_hit_empty_clang_001_76754 - Trimmed (000001B6B3D66FA8)
+[LOG] SoundI::release                          :  (000001B74072CD58)
+[LOG] SoundI::release                          :     zapsplat_foley_paper_sheets_several_handling_lighty_crumpling_002_84585 - Trimmed (000001B5AD618938)
+[LOG] SoundI::release                          :  (000001B74072D488)
+[LOG] SoundI::release                          :     zapsplat_foley_paper_sheets_several_handling_lighty_crumpling_001_84584 - Trimmed (000001B790FC4238)
+[LOG] SoundI::release                          :  (000001B6BE3DE2B8)
+[LOG] SoundI::release                          :     zapsplat_office_calculator_button_press_single_002_11984 - Trimmed - Trimmed - Trimmed (000001B5AD614238)
+[LOG] SoundI::release                          :  (000001B6BE3DCD28)
+[LOG] SoundI::release                          :     zapsplat_office_calculator_button_press_single_001_11983 - Trimmed (000001B5AD948C08)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)

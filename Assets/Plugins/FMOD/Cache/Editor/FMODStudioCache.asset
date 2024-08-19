@@ -48,6 +48,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-8694923428494469833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Build Department
+  m_EditorClassIdentifier: 
+  Path: event:/Build Department
+  Guid:
+    Data1: 1208197979
+    Data2: 1180710779
+    Data3: -198258771
+    Data4: 2130946238
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11135
 --- !u!114 &-8655735375470225310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,9 +85,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Desk Button Press/deskButtonPress
+  m_Name: parameter:/Desk Button Press/deskButton
   m_EditorClassIdentifier: 
-  Name: deskButtonPress
+  Name: deskButton
   StudioPath: 
   Min: 0
   Max: 1
@@ -87,12 +114,12 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638595018693851681
+  lastModified: 638596093237234953
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 31584
   Exists: 1
---- !u!114 &-8176299865063324560
+--- !u!114 &-8157376764205837947
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,25 +129,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Elevator Door Open
+  m_Name: event:/Over Small Building Game
   m_EditorClassIdentifier: 
-  Path: event:/Elevator Door Open
+  Path: event:/Over Small Building Game
   Guid:
-    Data1: 2044409544
-    Data2: 1113900646
-    Data3: 118824093
-    Data4: 286350857
+    Data1: -752066985
+    Data2: 1235989582
+    Data3: -1017113153
+    Data4: -1897024641
   Banks:
   - {fileID: 2159605530403505793}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters:
-  - {fileID: 8535831788467432861}
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 507
---- !u!114 &-8007400602082880326
+  Length: 779
+--- !u!114 &-7050465990832511116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,23 +156,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/zapsplat_nature_thunderstorm_close_windy_driving_rain_thunder_rumbles_and_light_cracks_57912
+  m_Name: event:/In Game Head Flight
   m_EditorClassIdentifier: 
-  Path: event:/zapsplat_nature_thunderstorm_close_windy_driving_rain_thunder_rumbles_and_light_cracks_57912
+  Path: event:/In Game Head Flight
   Guid:
-    Data1: -421523489
-    Data2: 1146804874
-    Data3: -1266942048
-    Data4: 1851578348
+    Data1: -1451489169
+    Data2: 1271514146
+    Data3: 448896155
+    Data4: 1899112480
   Banks:
   - {fileID: 2159605530403505793}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 205526
+  Length: 3699
+--- !u!114 &-6717197845590236599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Computer Booting
+  m_EditorClassIdentifier: 
+  Path: event:/Computer Booting
+  Guid:
+    Data1: -10165317
+    Data2: 1307022843
+    Data3: 1653863341
+    Data4: -784997544
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15045
 --- !u!114 &-5696270897029961332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +228,85 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5000
+--- !u!114 &-5277365835986511043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Over Small Building Real/smallBuildingReal
+  m_EditorClassIdentifier: 
+  Name: smallBuildingReal
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3820110971
+    data2: 4038525804
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-4741543019491248061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game Over
+  m_EditorClassIdentifier: 
+  Path: event:/Game Over
+  Guid:
+    Data1: -232997703
+    Data2: 1239257526
+    Data3: 1654681216
+    Data4: 1278511945
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9125
+--- !u!114 &-4423731260569898235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Throwing Away Resume
+  m_EditorClassIdentifier: 
+  Path: event:/Throwing Away Resume
+  Guid:
+    Data1: -1465579140
+    Data2: 1159019151
+    Data3: 2096927874
+    Data4: -1093112529
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 3229878136076898485}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1437
 --- !u!114 &-3383404799443483492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,9 +317,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/In The Red Alarm/redZone
+  m_Name: parameter:/In The Red Alarm/inTheRedAlarm
   m_EditorClassIdentifier: 
-  Name: redZone
+  Name: inTheRedAlarm
   StudioPath: 
   Min: 0
   Max: 1
@@ -199,6 +331,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-2508807619059018470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Over Small Building Real
+  m_EditorClassIdentifier: 
+  Path: event:/Over Small Building Real
+  Guid:
+    Data1: 2144646834
+    Data2: 1129023558
+    Data3: -1837310785
+    Data4: 96564698
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -5277365835986511043}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12548
 --- !u!114 &-1760291057925877600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +383,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-1140969278379289144
+--- !u!114 &-1394620119136701435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,24 +393,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Elevator Door To Promotion
+  m_Name: event:/Destroy Large Building Real
   m_EditorClassIdentifier: 
-  Path: event:/Elevator Door To Promotion
+  Path: event:/Destroy Large Building Real
   Guid:
-    Data1: -2059466358
-    Data2: 1121666057
-    Data3: -406029682
-    Data4: 569889202
+    Data1: 391278516
+    Data2: 1287508108
+    Data3: -965702211
+    Data4: 1479819343
   Banks:
   - {fileID: 2159605530403505793}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters:
-  - {fileID: 7767660152335641650}
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2000
+  Length: 6508
 --- !u!114 &-984468603452753739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,7 +437,34 @@ MonoBehaviour:
   - {fileID: -8655735375470225310}
   MinDistance: 1
   MaxDistance: 20
-  Length: 500
+  Length: 30
+--- !u!114 &-374622036342637851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Desk Button Release
+  m_EditorClassIdentifier: 
+  Path: event:/Desk Button Release
+  Guid:
+    Data1: 596524057
+    Data2: 1274942227
+    Data3: 949184402
+    Data4: 829435937
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 25
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,23 +482,36 @@ MonoBehaviour:
   - {fileID: -8270341587389453454}
   - {fileID: 2159605530403505793}
   EditorEvents:
-  - {fileID: -8007400602082880326}
   - {fileID: 4584747308474857108}
   - {fileID: -5696270897029961332}
-  - {fileID: -1140969278379289144}
   - {fileID: 5384899669257285534}
   - {fileID: 8047746031903182963}
-  - {fileID: -8176299865063324560}
   - {fileID: -984468603452753739}
   - {fileID: 1489859014314752287}
   - {fileID: 3137286969432268079}
   - {fileID: 8168016707911706775}
+  - {fileID: 5939712685898502429}
+  - {fileID: 2638474977088513399}
+  - {fileID: 6653560267537413189}
+  - {fileID: -374622036342637851}
+  - {fileID: -8157376764205837947}
+  - {fileID: -8694923428494469833}
+  - {fileID: 3126609539885116123}
+  - {fileID: -7050465990832511116}
+  - {fileID: 1616078889086881872}
+  - {fileID: -4423731260569898235}
+  - {fileID: 4388860898087670347}
+  - {fileID: -2508807619059018470}
+  - {fileID: -1394620119136701435}
+  - {fileID: -4741543019491248061}
+  - {fileID: -6717197845590236599}
+  - {fileID: 2035181821933260373}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8270341587389453454}
   StringsBanks:
   - {fileID: 815529047274646714}
-  cacheTime: 638595018757882227
+  cacheTime: 638596093237704973
   cacheVersion: 131619
 --- !u!114 &815529047274646714
 MonoBehaviour:
@@ -329,10 +528,10 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638595018693881586
+  lastModified: 638596093237234953
   FileSizes:
   - Name: Desktop
-    Value: 1952
+    Value: 2692
   Exists: 1
 --- !u!114 &1489859014314752287
 MonoBehaviour:
@@ -360,7 +559,61 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 38750
+  Length: 33141
+--- !u!114 &1616078889086881872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Stack Resume Spawn
+  m_EditorClassIdentifier: 
+  Path: event:/Stack Resume Spawn
+  Guid:
+    Data1: 720500335
+    Data2: 1122016862
+    Data3: -1443436385
+    Data4: 714563281
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 617
+--- !u!114 &2035181821933260373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Single Resume Spawn
+  m_EditorClassIdentifier: 
+  Path: event:/Single Resume Spawn
+  Guid:
+    Data1: -1058036007
+    Data2: 1309471456
+    Data3: -132354379
+    Data4: -297217425
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 197
 --- !u!114 &2159605530403505793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,10 +629,10 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Sounds.bank
   Name: Sounds
   StudioPath: bank:/Sounds
-  lastModified: 638595018757882227
+  lastModified: 638596093237704973
   FileSizes:
   - Name: Desktop
-    Value: 8002112
+    Value: 9002304
   Exists: 1
 --- !u!114 &2492738901201882247
 MonoBehaviour:
@@ -391,9 +644,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Computer Clicking/computerScreenClick
+  m_Name: parameter:/Computer Clicking/computerClick
   m_EditorClassIdentifier: 
-  Name: computerScreenClick
+  Name: computerClick
   StudioPath: 
   Min: 0
   Max: 1
@@ -405,6 +658,84 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &2638474977088513399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Destroy Large Building Game
+  m_EditorClassIdentifier: 
+  Path: event:/Destroy Large Building Game
+  Guid:
+    Data1: -2053447674
+    Data2: 1138014472
+    Data3: 954584488
+    Data4: -9231154
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2498
+--- !u!114 &2936317919752374138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Hiring Employee/hiringEmployee
+  m_EditorClassIdentifier: 
+  Name: hiringEmployee
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 69242973
+    data2: 3834191319
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &3126609539885116123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music
+  Guid:
+    Data1: 963497056
+    Data2: 1184531469
+    Data3: 1339800984
+    Data4: -806423695
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 38437
 --- !u!114 &3137286969432268079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,14 +756,66 @@ MonoBehaviour:
     Data4: -355251506
   Banks:
   - {fileID: 2159605530403505793}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 7551619719885309148}
   MinDistance: 1
   MaxDistance: 20
-  Length: 2500
+  Length: 4775
+--- !u!114 &3229878136076898485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Throwing Away Resume/throwingAwayResume
+  m_EditorClassIdentifier: 
+  Name: throwingAwayResume
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2201172785
+    data2: 1528826364
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &4388860898087670347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Elevator Door Open and Close
+  m_EditorClassIdentifier: 
+  Path: event:/Elevator Door Open and Close
+  Guid:
+    Data1: -2059466358
+    Data2: 1121666057
+    Data3: -406029682
+    Data4: 569889202
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 4810462268653731627}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
 --- !u!114 &4584747308474857108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,7 +845,31 @@ MonoBehaviour:
   - {fileID: 8495062350626737378}
   MinDistance: 1
   MaxDistance: 20
-  Length: 7250
+  Length: 8901
+--- !u!114 &4810462268653731627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Elevator Door Open and Close/elevatorDoor
+  m_EditorClassIdentifier: 
+  Name: elevatorDoor
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3786865209
+    data2: 97787802
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &5384899669257285534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,6 +898,63 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 343
+--- !u!114 &5939712685898502429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Build Department in game
+  m_EditorClassIdentifier: 
+  Path: event:/Build Department in game
+  Guid:
+    Data1: -2028783898
+    Data2: 1210078912
+    Data3: -1912248144
+    Data4: -90268748
+  Banks:
+  - {fileID: -8270341587389453454}
+  - {fileID: 2159605530403505793}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 7489508202070015848}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1503
+--- !u!114 &6653560267537413189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Hiring Employee
+  m_EditorClassIdentifier: 
+  Path: event:/Hiring Employee
+  Guid:
+    Data1: -1925361396
+    Data2: 1295600853
+    Data3: -1064843891
+    Data4: 1576257843
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2936317919752374138}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 382
 --- !u!114 &7035757423149896295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,9 +965,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Employee Talking/employeeTalks
+  m_Name: parameter:/Employee Talking/employeeTalking
   m_EditorClassIdentifier: 
-  Name: employeeTalks
+  Name: employeeTalking
   StudioPath: 
   Min: 0
   Max: 1
@@ -511,6 +975,30 @@ MonoBehaviour:
   ID:
     data1: 2575491946
     data2: 1064271969
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7489508202070015848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Build Department in game/buildingDepartment
+  m_EditorClassIdentifier: 
+  Name: buildingDepartment
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 143000185
+    data2: 986857022
   Type: 1
   IsGlobal: 0
   Labels: []
@@ -525,9 +1013,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Production Income/income
+  m_Name: parameter:/Production Income/productionIncome
   m_EditorClassIdentifier: 
-  Name: income
+  Name: productionIncome
   StudioPath: 
   Min: 0
   Max: 1
@@ -535,30 +1023,6 @@ MonoBehaviour:
   ID:
     data1: 2795770965
     data2: 1267099686
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &7767660152335641650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Elevator Door To Promotion/promoteButtonPressed
-  m_EditorClassIdentifier: 
-  Name: promoteButtonPressed
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3786865209
-    data2: 97787802
   Type: 1
   IsGlobal: 0
   Labels: []
@@ -639,30 +1103,6 @@ MonoBehaviour:
   ID:
     data1: 1947054488
     data2: 3527381425
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &8535831788467432861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Elevator Door Open/elevatorDoorOpens
-  m_EditorClassIdentifier: 
-  Name: elevatorDoorOpens
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3454220638
-    data2: 2893533955
   Type: 1
   IsGlobal: 0
   Labels: []

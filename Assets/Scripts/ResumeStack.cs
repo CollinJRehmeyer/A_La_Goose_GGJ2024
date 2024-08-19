@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,6 +28,11 @@ public class ResumeStack : MonoBehaviour
     public Vector3 pageRejectOffset = new Vector3(-.3f, 0, 0);
     public float distanceForAcceptedSwipe;
     public float maxSwipeDistance;
+
+    public StudioEventEmitter singleResume;
+    public StudioEventEmitter throwAway;
+    public StudioEventEmitter hire;
+    public StudioEventEmitter resumeStack;
 
     private Vector3 initialMousePosition;
 
@@ -156,6 +162,8 @@ public class ResumeStack : MonoBehaviour
     {
         pages.Remove(selectedPage);
         Destroy(selectedPage.gameObject);
+
+        throwAway.Play();
         //print("reject resume");
     }
     void AcceptResume()
@@ -164,6 +172,8 @@ public class ResumeStack : MonoBehaviour
         employeeManager.AddEmployee(selectedPage.employee, employeeManager.employees.Count);
         pages.Remove(selectedPage);
         Destroy(selectedPage.gameObject);
+
+        hire.Play();
     }
 
     void OnMouseHover()
@@ -176,6 +186,8 @@ public class ResumeStack : MonoBehaviour
             isHoveringOverStack = true;
             StartCoroutine(HighlightTopPage(pageToMove));
             //print("hovering over stack");
+
+            singleResume.Play();
         }
     }
 
@@ -187,12 +199,32 @@ public class ResumeStack : MonoBehaviour
             isHoveringOverStack = false;
             StartCoroutine(UnhighlightTopPage(pages[pages.Count - 1]));
             //print("end hovering over stack");
+
+            singleResume.Play();
         }
     }
     public bool TryAddPagesToStack(int numPages)
     {
         if (canAdd)
         {
+            bool hasPlayed = false;
+
+            if(numPages <= 3 && numPages > 0 && !hasPlayed)
+            {
+                singleResume.Play();
+                hasPlayed = true;
+            }
+            else if (numPages > 3 && !hasPlayed)
+            {
+                resumeStack.Play();
+                hasPlayed = true;
+            }
+
+            if (numPages == 0)
+            {
+                hasPlayed = false;
+            }
+
             for (int i = 0; i < numPages; i++)
             {
                 AddPageToStack();
