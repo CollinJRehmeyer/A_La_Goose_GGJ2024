@@ -330,12 +330,20 @@ public class EmployeeManager : MonoBehaviour
     }
     public float CalculateAvgMorale()
     {
-        float totalMorale = 0;
-        foreach (Employee e in employees)
-        {
-            totalMorale += e.morale;
-        }
 
-        return (totalMorale / employees.Count);
+        if (employees.Count > 0)
+        {
+            float totalMorale = 0;
+            foreach (Employee e in employees)
+            {
+                totalMorale += e.morale;
+            }
+
+            return (totalMorale / employees.Count);
+        }
+        else
+        {
+            return 0;
+        }
     }
 }
