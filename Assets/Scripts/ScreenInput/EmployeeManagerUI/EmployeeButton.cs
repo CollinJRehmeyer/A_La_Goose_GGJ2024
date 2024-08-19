@@ -79,7 +79,7 @@ public class EmployeeButton : MonoBehaviour
 
         while(walkingSprite.transform.position.x < manager.elevatorMarker.transform.position.x)
         {
-            walkingSprite.transform.position += transform.right * Time.deltaTime;
+            walkingSprite.transform.position += transform.right * Time.deltaTime * 1.5f;
             yield return new WaitForEndOfFrame();
         }
 
