@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -12,6 +13,7 @@ public class EmployeeButton : MonoBehaviour
     public Button button;
     public EmployeeManager manager;
     public GameObject walkingSprite;
+    public StudioEventEmitter elevator;
 
     private void Start()
     {
@@ -71,6 +73,8 @@ public class EmployeeButton : MonoBehaviour
         }
 
         GameObject.Find("Doors").GetComponent<Animator>().SetTrigger("open");
+        elevator = GameObject.Find("Doors").GetComponent <StudioEventEmitter>();
+        elevator.Play();
         walkingSprite.GetComponent<Image>().enabled = false;
         manager.SetEmployeeOfficeSprite(employee.employeeSprite);
     }
@@ -78,6 +82,8 @@ public class EmployeeButton : MonoBehaviour
     public IEnumerator ReturnToWork()
     {
         GameObject.Find("Doors").GetComponent<Animator>().SetTrigger("close");
+        elevator = GameObject.Find("Doors").GetComponent<StudioEventEmitter>();
+        elevator.Play();
         walkingSprite.GetComponent<Image>().enabled = true;
         walkingSprite.transform.localScale = new Vector3(-1, 1, 1);
 

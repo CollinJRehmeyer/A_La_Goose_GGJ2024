@@ -154,16 +154,18 @@ MonoBehaviour:
   employeeGrid: {fileID: 0}
   employeeBtnPrefab: {fileID: 3412331278518488344, guid: 3f1e293b133f1064a904dac50f9a0bca, type: 3}
   elevatorMarker: {fileID: 0}
+  elevator: {fileID: 0}
   fireButton: {fileID: 0}
   dismissButton: {fileID: 0}
+  employeeOfficeSprite: {fileID: 0}
   totalProd: 0
-  prodGoal: 100
-  prodReward: 1
+  prodGoal: 1000
+  prodReward: 10
   totalCost: 0
   avgLikeability: 0
   avgMorale: 0
   totalValue: 0
-  moraleBoostPership: 0
+  moraleBoostPership: 1
   numStartEmployees: 0
   prodSlider: {fileID: 0}
   costSlider: {fileID: 0}
