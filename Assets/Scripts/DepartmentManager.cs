@@ -11,6 +11,19 @@ public class DepartmentManager : MonoBehaviour
 
     public GameObject companyHead;
 
+    public EmployeeManager employeeManager;
+    public DeskButton acquireDeptButton;
+
+
+    private void Start()
+    {
+        acquireDeptButton.onButtonPress.AddListener(AddDepartment);
+
+        foreach (GameObject obj in departmentObjs)
+        {
+            obj.SetActive(false);
+        }
+    }
 
     private void Update()
     {
@@ -24,6 +37,7 @@ public class DepartmentManager : MonoBehaviour
         {
             departmentObjs[newDeptIndex].SetActive(true);
             newDeptIndex++;
+            SetMaxEmployees();
         }
     }
 
