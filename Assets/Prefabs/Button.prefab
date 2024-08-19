@@ -109,7 +109,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121456990222406747}
-  m_LocalRotation: {x: 0.7543865, y: -0, z: -0, w: 0.65643066}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0.05333154}
   m_LocalScale: {x: 0.13333336, y: 0.13168876, z: 0.048868578}
   m_ConstrainProportionsScale: 0
@@ -342,11 +342,18 @@ MonoBehaviour:
   pressablePart: {fileID: 1522910287871884272}
   hoverDownOffset: 0.018
   pressDownOffset: -0.008
+  click: {fileID: 3930580110945896807}
+  release: {fileID: 6908699760248000370}
+  activatedMaterial: {fileID: 0}
+  useCurrentMaterialAsActivatedMaterial: 1
+  deactivatedMaterial: {fileID: 2100000, guid: ed9da3ccaf3923644a852b8defe05a88, type: 2}
+  buttonMesh: {fileID: 720194987792696635}
+  hideLabelOnDeactivate: 1
+  showLabelOnActivate: 1
+  label: {fileID: 2121456990222406747}
   onButtonPress:
     m_PersistentCalls:
       m_Calls: []
-  click: {fileID: 3930580110945896807}
-  release: {fileID: 6908699760248000370}
 --- !u!65 &842940756458187295
 BoxCollider:
   m_ObjectHideFlags: 0
