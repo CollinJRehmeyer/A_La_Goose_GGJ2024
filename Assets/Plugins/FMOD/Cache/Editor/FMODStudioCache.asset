@@ -114,7 +114,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638596182824331592
+  lastModified: 638596163432666549
   FileSizes:
   - Name: Desktop
     Value: 31584
@@ -200,6 +200,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 15045
+--- !u!114 &-6496400169187421189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Elevator Ding
+  m_EditorClassIdentifier: 
+  Path: event:/Elevator Ding
+  Guid:
+    Data1: 2023588841
+    Data2: 1162468663
+    Data3: -374487873
+    Data4: 1838591175
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1425
 --- !u!114 &-5696270897029961332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +436,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 6508
+  Length: 3495
 --- !u!114 &-984468603452753739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,12 +534,14 @@ MonoBehaviour:
   - {fileID: -6717197845590236599}
   - {fileID: 2035181821933260373}
   - {fileID: 919370308056743213}
+  - {fileID: 6215673781352596733}
+  - {fileID: -6496400169187421189}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8270341587389453454}
   StringsBanks:
   - {fileID: 815529047274646714}
-  cacheTime: 638596275181814478
+  cacheTime: 638597021172652389
   cacheVersion: 131619
 --- !u!114 &815529047274646714
 MonoBehaviour:
@@ -529,10 +558,10 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638596275181334419
+  lastModified: 638597021172191948
   FileSizes:
   - Name: Desktop
-    Value: 2748
+    Value: 2836
   Exists: 1
 --- !u!114 &919370308056743213
 MonoBehaviour:
@@ -657,10 +686,10 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Sounds.bank
   Name: Sounds
   StudioPath: bank:/Sounds
-  lastModified: 638596275181814478
+  lastModified: 638597021172652389
   FileSizes:
   - Name: Desktop
-    Value: 9003392
+    Value: 9111296
   Exists: 1
 --- !u!114 &2492738901201882247
 MonoBehaviour:
@@ -791,7 +820,7 @@ MonoBehaviour:
   - {fileID: 7551619719885309148}
   MinDistance: 1
   MaxDistance: 20
-  Length: 4775
+  Length: 5995
 --- !u!114 &3229878136076898485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,7 +872,7 @@ MonoBehaviour:
   - {fileID: 4810462268653731627}
   MinDistance: 1
   MaxDistance: 20
-  Length: 4000
+  Length: 2218
 --- !u!114 &4584747308474857108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -955,6 +984,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1503
+--- !u!114 &6215673781352596733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Computer Game Cannon
+  m_EditorClassIdentifier: 
+  Path: event:/Computer Game Cannon
+  Guid:
+    Data1: 1320514163
+    Data2: 1198256105
+    Data3: -420245574
+    Data4: -667826352
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
 --- !u!114 &6653560267537413189
 MonoBehaviour:
   m_ObjectHideFlags: 0

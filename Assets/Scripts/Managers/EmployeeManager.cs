@@ -11,9 +11,12 @@ public class EmployeeManager : MonoBehaviour
     public List<Employee> employees = new List<Employee>();
     public List<GameObject> employeeButtons = new List<GameObject>();
 
+    public bool gameLost = false;
+
     public DepartmentManager deptManager;
 
     public Sprite[] employeeSprites;
+    public Sprite deathSprite;
 
     public GameObject employeeGrid;
     public GameObject employeeBtnPrefab;
@@ -37,6 +40,10 @@ public class EmployeeManager : MonoBehaviour
 
     public StudioEventEmitter confettiSound;
 
+    public GameObject employeeScreen;
+
+    public SpeechBubble speechBubble;
+
 
     public float totalProd;
     public int totalProjectsCompleted = 0;
@@ -51,6 +58,7 @@ public class EmployeeManager : MonoBehaviour
     public float totalValue;
     public float moraleBoostPership;
     public int numStartEmployees = 1;
+    public GameObject redAlarm;
 
     public Slider prodSlider;
     public Slider costSlider;
@@ -81,11 +89,21 @@ public class EmployeeManager : MonoBehaviour
 
         FMOD.Studio.EventInstance musicEvent = GameObject.Find("Music").GetComponent<StudioEventEmitter>().EventInstance;
         musicEvent.setPaused(true);
+
+
     }
 
     private void Update()
     {
-
+        if (totalValue < 0 && !redAlarm.activeInHierarchy)
+        {
+            redAlarm.SetActive(true);
+            redAlarm.GetComponent<StudioEventEmitter>().Play();
+        }
+        else if (totalValue > 0 && redAlarm.activeInHierarchy)
+        {
+            redAlarm.SetActive(false);
+        }
 
         if (fire)
         {
@@ -124,7 +142,6 @@ public class EmployeeManager : MonoBehaviour
         totalCost = CalculateCost();
         avgLikeability = CalculateAvgLikeability();
         avgMorale = CalculateAvgMorale();
-
         prodSlider.value = totalProd / prodGoal;
         costSlider.value = totalCost / 5;
         //likeabilitySlider.value = avgLikeability / 5;
@@ -209,7 +226,13 @@ public class EmployeeManager : MonoBehaviour
     {
         if (selectedEmployee != -1)
         {
+            //promote them instead
             StartCoroutine(confettiStop());
+            Employee e = employees[selectedEmployee];
+            e.salary *= 1.2f;
+            e.morale += e.passion;
+            speechBubble.gameObject.SetActive(false);
+
         }
         else
         {
@@ -228,6 +251,7 @@ public class EmployeeManager : MonoBehaviour
             selectedEmployee = -1;
             GameObject.Find("Doors").GetComponent<Animator>().SetTrigger("close");
             StartCoroutine(FireEmployeeFromCannon());
+            speechBubble.gameObject.SetActive(false);
         }
         else
         {
@@ -280,6 +304,17 @@ public class EmployeeManager : MonoBehaviour
             prodGoal =  startingProdGoal + projectIncreaseFactor * startingProdGoal;
             prodReward = startingProdReward + projectIncreaseFactor * startingProdReward;
         }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        if (avgMorale < 0.5f && employees.Count > 0)
+        {
+            StartCoroutine(Lose());
+        }
+
+        if (avgMorale > 4.5f && employees.Count > 0)
+        {
+            StartCoroutine(Lose());
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
     public void WorkEmployees()
     {
@@ -314,6 +349,15 @@ public class EmployeeManager : MonoBehaviour
 
     public void PayEmployeeSalaries()
     {
+
+        if(totalValue < 0)
+        {
+            if(!gameLost)
+            {
+                StartCoroutine(Lose());
+            }
+            return;
+        }
         foreach (Employee e in employees)
         {
             payEmployeeSound.Play();
@@ -420,5 +464,26 @@ public class EmployeeManager : MonoBehaviour
         {
             return 0;
         }
+    }
+
+    public IEnumerator Lose()
+    {
+        gameLost = true;
+        fireButton.canPress = false;
+        dismissButton.canPress = false;
+        startProjectButton.canPress = false;
+
+        deptManager.companyHead.GetComponent<Animator>().SetTrigger("dead");
+        GameManager.instance.ExplodeAndReset();
+
+        yield return new WaitForSeconds(3);
+
+        employeeScreen.SetActive(false);
+
+        employeeOfficeSprite.sprite = deathSprite;
+
+        GameObject.Find("Doors").GetComponent<Animator>().SetTrigger("open");
+
+
     }
 }

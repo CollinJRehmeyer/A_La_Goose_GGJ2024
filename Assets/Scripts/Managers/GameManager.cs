@@ -1,8 +1,10 @@
+using FMODUnity;
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +20,12 @@ public class GameManager : MonoBehaviour
 
     public float payTimer = 0, addValueTimer = 0;
 
+    public Image overlay;
+
+    public bool gameStarted;
+
+    public StudioEventEmitter explodeSFX;
+
     public Slider payTimerSlider;
     public Slider addValueTimerSlider;
     public Text expectedValueReadout;
@@ -32,12 +40,29 @@ public class GameManager : MonoBehaviour
             Destroy(this);
     }
 
+    private void Start()
+    {
+        Color c = overlay.color;
+        c.a = 0;
+        overlay.color = c;
+    }
 
-    
+
     void Update()
     {
-        payTimer += Time.deltaTime;
-        addValueTimer += Time.deltaTime;
+        if(!employeeManager.gameLost)
+        {
+            Color c = overlay.color;
+            c.a = 0;
+            overlay.color = c;
+        }
+
+        if (gameStarted)
+        {
+            payTimer += Time.deltaTime;
+            addValueTimer += Time.deltaTime;
+        }
+
 
         payTimerSlider.value = payTimer / PAY_TIMESCALE;
         addValueTimerSlider.value = addValueTimer / ADD_VALUE_TIMESCALE;
@@ -91,6 +116,54 @@ public class GameManager : MonoBehaviour
     {
         addValueTimer = 0;
         employeeManager.WorkEmployees();
+    }
+
+    public void StartExplodeSFX()
+    {
+        explodeSFX.Play();
+    }
+
+    public void ExplodeAndReset()
+    {
+        StartExplodeSFX();
+        StartCoroutine(Explode());
+    }
+
+    public IEnumerator Explode()
+    {
+        yield return new WaitForSeconds(9f);
+
+        StartCoroutine(ActivateOverlay());
+    }
+
+    public IEnumerator ActivateOverlay()
+    {
+        float timer = 0;
+
+        while(timer < .05f)
+        {
+            float a = Mathf.Lerp(0, 1, timer / 0.05f);
+            Color c = overlay.color;
+            c.a = a;
+            overlay.color = c;
+            timer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        Color c2 = overlay.color;
+        c2.a = 1;
+        overlay.color = c2;
+
+        Application.Quit();
+    }
+
+
+    public void StartGame()
+    {
+        gameStarted = true;
+        employeeManager.fireButton.SetButtonActive(true);
+        employeeManager.dismissButton.SetButtonActive(true);
+        employeeManager.startProjectButton.SetButtonActive(true);
+
     }
 }
 

@@ -41,6 +41,7 @@ public class EmployeeButton : MonoBehaviour
 
     public void SelectEmployee()
     {
+        EmployeeInspectWidget.Instance.selectedButton = this;
         if (manager.selectedEmployee == -1)
         {
             click.Play();
@@ -87,6 +88,8 @@ public class EmployeeButton : MonoBehaviour
         }
 
         GameObject.Find("Doors").GetComponent<Animator>().SetTrigger("open");
+        manager.speechBubble.gameObject.SetActive(true);
+        manager.speechBubble.GenerateQuip();
         elevator = GameObject.Find("Doors").GetComponent <StudioEventEmitter>();
         elevator.Play();
         /////////////////////////////////////////////////////////////////

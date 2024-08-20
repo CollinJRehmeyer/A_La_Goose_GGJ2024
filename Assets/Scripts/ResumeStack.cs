@@ -46,10 +46,10 @@ public class ResumeStack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            TryAddPagesToStack(1);
-        }
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    TryAddPagesToStack(1);
+        //}
         if (canAdd)
         {
             AddPagesFromQueue();
@@ -152,7 +152,7 @@ public class ResumeStack : MonoBehaviour
             else
             {
                 //print("dragged to accept");
-                if(employeeManager.employees.Count < employeeManager.deptManager.maxEmployees)
+                if(employeeManager.employees.Count < employeeManager.deptManager.maxEmployees && GameManager.instance.gameStarted)
                 {
                     AcceptResume();
                 }

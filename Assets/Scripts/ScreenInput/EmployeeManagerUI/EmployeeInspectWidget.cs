@@ -7,6 +7,7 @@ public class EmployeeInspectWidget : MonoBehaviour
 {
     public GameObject visContainer;
     public Employee selectedEmployee;
+    public EmployeeButton selectedButton;
     
     public SpriteRenderer employeeSpriteRenderer;
     public TMP_Text salaryText;
@@ -66,6 +67,12 @@ public class EmployeeInspectWidget : MonoBehaviour
         Show();
         
     }
+
+    public void ClickSelectedButton()
+    {
+        selectedButton.SelectEmployee();
+    }
+
     public void Show()
     {
         visContainer.SetActive(true);
