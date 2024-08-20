@@ -30,8 +30,8 @@ public class Employee
     public float minLikeability = 0;
     public float maxPassion = 5;
     public float minPassion = 0;
-    public float maxSalary = 20;
-    public float minSalary = 1;
+    public float maxSalary = 2000;
+    public float minSalary = 100;
 
     public float moraleGainPerShipFactor = 1;
     public float moraleLossPerLeechFactor =.05f;
@@ -89,7 +89,7 @@ public class Employee
             //{ "McSleeve", "Grunderson", "Raucous", "Blastronaut", "Ramrod", "Cussing" };
 
         string first = givenFirsts[UnityEngine.Random.Range(0, givenFirsts.Length)] + givenSeconds[UnityEngine.Random.Range(0, givenSeconds.Length)];
-        string last = lastFirsts[UnityEngine.Random.Range(0, givenFirsts.Length)] + lastSeconds[UnityEngine.Random.Range(0, lastSeconds.Length)];
+        string last = lastFirsts[UnityEngine.Random.Range(0, lastFirsts.Length)] + lastSeconds[UnityEngine.Random.Range(0, lastSeconds.Length)];
 
         return first + " " + last;
     }

@@ -174,7 +174,7 @@ MonoBehaviour:
   totalProd: 0
   totalProjectsCompleted: 0
   prodGoal: 1000
-  prodReward: 10
+  prodReward: 1000
   completedProjectsBeforeRewardIncrease: 3
   totalCost: 0
   avgLikeability: 0
