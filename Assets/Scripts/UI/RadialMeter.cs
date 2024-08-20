@@ -13,6 +13,11 @@ public class RadialMeter : MonoBehaviour
     public Transform meterOrigin;
     private Quaternion initialRotation;
 
+    public Material clockface;
+    public Color originalColor;
+    public Color RedColor;
+    public float speed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +39,16 @@ public class RadialMeter : MonoBehaviour
         {
             meterPercent = (inputAmount - emptyAmount) / (fullAmount - emptyAmount);
             float targetAngle = Mathf.Lerp(emptyAngle, fullAngle, meterPercent);
+
+            if (meterPercent > 0.75f)
+            {
+                clockface.color = Vector4.MoveTowards(clockface.color, RedColor*4, speed);
+            }
+            if (meterPercent < 0.75f)
+            {
+                clockface.color = originalColor;
+            }
+
             meterOrigin.rotation = initialRotation * Quaternion.Euler(emptyAngle, fullAngle, targetAngle);
             
         }
