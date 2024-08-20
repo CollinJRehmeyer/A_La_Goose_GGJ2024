@@ -142,7 +142,6 @@ public class EmployeeManager : MonoBehaviour
         totalCost = CalculateCost();
         avgLikeability = CalculateAvgLikeability();
         avgMorale = CalculateAvgMorale();
-
         prodSlider.value = totalProd / prodGoal;
         costSlider.value = totalCost / 5;
         //likeabilitySlider.value = avgLikeability / 5;
@@ -305,6 +304,17 @@ public class EmployeeManager : MonoBehaviour
             prodGoal =  startingProdGoal + projectIncreaseFactor * startingProdGoal;
             prodReward = startingProdReward + projectIncreaseFactor * startingProdReward;
         }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        if (avgMorale < 0.5f && employees.Count > 0)
+        {
+            StartCoroutine(Lose());
+        }
+
+        if (avgMorale > 4.5f && employees.Count > 0)
+        {
+            StartCoroutine(Lose());
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
     public void WorkEmployees()
     {
