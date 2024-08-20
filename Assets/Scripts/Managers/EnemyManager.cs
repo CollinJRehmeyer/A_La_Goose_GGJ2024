@@ -68,6 +68,11 @@ public class EnemyManager : MonoBehaviour
 
     public void LoseHP()
     {
+        if (currentBuilding == null)
+        {
+            return;
+        }
+
         hitPoints -= 1;
 
         if(hitPoints <= 0)
