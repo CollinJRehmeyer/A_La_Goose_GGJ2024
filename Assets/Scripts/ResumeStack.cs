@@ -152,7 +152,10 @@ public class ResumeStack : MonoBehaviour
             else
             {
                 //print("dragged to accept");
-                AcceptResume();
+                if(employeeManager.employees.Count < employeeManager.deptManager.maxEmployees)
+                {
+                    AcceptResume();
+                }
             }
             canAdd = true;
         }
