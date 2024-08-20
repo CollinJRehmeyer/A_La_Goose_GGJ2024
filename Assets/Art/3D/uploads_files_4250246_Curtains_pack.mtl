@@ -1,0 +1,74 @@
+# Blender 3.3.0 MTL File: 'None'
+# www.blender.org
+
+newmtl Curtain_Beige
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/cedva/Downloads/Beige/Curtain_2_LP_Curtain_1_BaseColor.png
+map_Ns C:/Users/cedva/Downloads/Beige/Curtain_2_LP_Curtain_1_Roughness.png
+map_refl C:/Users/cedva/Downloads/Beige/Curtain_2_LP_Curtain_1_Metallic.png
+map_Bump -bm 1.000000 C:/Users/cedva/Downloads/Beige/Curtain_2_LP_Curtain_1_Normal.png
+
+newmtl Curtain_Blue
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/cedva/Downloads/Blue/Curtain_2_LP_Curtain_1_BaseColor.png
+map_Ns C:/Users/cedva/Downloads/Blue/Curtain_2_LP_Curtain_1_Roughness.png
+map_refl C:/Users/cedva/Downloads/Blue/Curtain_2_LP_Curtain_1_Metallic.png
+map_Bump -bm 1.000000 C:/Users/cedva/Downloads/Blue/Curtain_2_LP_Curtain_1_Normal.png
+
+newmtl Curtain_Green
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/cedva/Downloads/Green/Curtain_2_LP_Curtain_1_BaseColor.png
+map_Ns C:/Users/cedva/Downloads/Green/Curtain_2_LP_Curtain_1_Roughness.png
+map_refl C:/Users/cedva/Downloads/Green/Curtain_2_LP_Curtain_1_Metallic.png
+map_Bump -bm 1.000000 C:/Users/cedva/Downloads/Green/Curtain_2_LP_Curtain_1_Normal.png
+
+newmtl Curtain_Grey
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/cedva/Downloads/Grey/Curtain_2_LP_Curtain_1_BaseColor.png
+map_Ns C:/Users/cedva/Downloads/Grey/Curtain_2_LP_Curtain_1_Roughness.png
+map_refl C:/Users/cedva/Downloads/Grey/Curtain_2_LP_Curtain_1_Metallic.png
+map_Bump -bm 1.000000 C:/Users/cedva/Downloads/Grey/Curtain_2_LP_Curtain_1_Normal.png
+
+newmtl Curtain_Red
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/cedva/Downloads/Red/Curtain_2_LP_Curtain_1_BaseColor.png
+map_Ns C:/Users/cedva/Downloads/Red/Curtain_2_LP_Curtain_1_Roughness.png
+map_refl C:/Users/cedva/Downloads/Red/Curtain_2_LP_Curtain_1_Metallic.png
+map_Bump C:/Users/cedva/Downloads/Red/Curtain_2_LP_Curtain_1_Normal.png
+
+newmtl Curtain_Yellow
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/cedva/Downloads/Yellow/Curtain_2_LP_Curtain_1_BaseColor.png
+map_Ns C:/Users/cedva/Downloads/Yellow/Curtain_2_LP_Curtain_1_Roughness.png
+map_refl C:/Users/cedva/Downloads/Yellow/Curtain_2_LP_Curtain_1_Metallic.png
+map_Bump -bm 1.000000 C:/Users/cedva/Downloads/Yellow/Curtain_2_LP_Curtain_1_Normal.png
