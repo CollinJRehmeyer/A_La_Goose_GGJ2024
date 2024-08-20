@@ -61,7 +61,6 @@ public class EmployeeInspectWidget : MonoBehaviour
     }
     public void SetEmployee(Employee employee)
     {
-
         selectedEmployee = employee;
         UpdateInfo();
         Show();

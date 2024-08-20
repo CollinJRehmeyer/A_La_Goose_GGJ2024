@@ -253,6 +253,15 @@ public class EmployeeManager : MonoBehaviour
     {
         if (!isWorkingOnProject)
         {
+            BackgroundScrollManager.instance.baseSpeed = 0.5f;
+            deptManager.tankMoving = true;
+
+            foreach (EnemyBuilding eb in FindObjectsOfType<EnemyBuilding>())
+            {
+                eb.speed = 0.01f;
+            }
+
+
             isWorkingOnProject = true;
             float projectIncreaseFactor = Mathf.Floor(totalProjectsCompleted / completedProjectsBeforeRewardIncrease);
             print("project increase factor: " + projectIncreaseFactor);
@@ -311,6 +320,17 @@ public class EmployeeManager : MonoBehaviour
     }
     private void ShipProduct()
     {
+        BackgroundScrollManager.instance.baseSpeed = 0f;
+        deptManager.tankMoving = false;
+
+        foreach(EnemyBuilding eb in FindObjectsOfType<EnemyBuilding>())
+        {
+            if(!eb.destroyed)
+            {
+                eb.speed = 0f;
+            }
+        }
+
         makeMoneySound.Play();
 
 
