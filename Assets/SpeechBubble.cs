@@ -79,6 +79,12 @@ public class SpeechBubble : MonoBehaviour
         sfx.Play();
     }
 
+    public void SetQuip(string quip)
+    {
+        quipText.text = quip;
+        sfx.Play();
+    }
+
     private void Awake()
     {
        sfx = GetComponent<StudioEventEmitter>();
