@@ -71,6 +71,9 @@ public class EmployeeManager : MonoBehaviour
         startProjectButton.onButtonPress.AddListener(StartWorkingOnProject);
         startingProdGoal = prodGoal;
         startingProdReward = prodReward;
+
+        FMOD.Studio.EventInstance musicEvent = GameObject.Find("Music").GetComponent<StudioEventEmitter>().EventInstance;
+        musicEvent.setPaused(true);
     }
 
     private void Update()

@@ -72,11 +72,24 @@ public class Employee
 
     public string RandomName()
     {
-        string[] firsts = { "Dorby", "Billmie", "Grundson", "Damn", "Blant", "Forson", "Biker", "Lorz" };
-        string[] lasts = { "McSleeve", "Grunderson", "Raucous", "Blastronaut", "Ramrod", "Cussing" };
+        string givenFirstHalf;
+        string givenSecondHalf;
 
-        string first = firsts[UnityEngine.Random.Range(0, firsts.Length)];
-        string last = lasts[UnityEngine.Random.Range(0, lasts.Length)];
+        string lastFirstHalf;
+        string lastSecondHalf;
+
+        string[] givenFirsts = { "Der", "Keen", "Coll", "Dav", "Ash", "Aar", "No", "Em", "For", "Isa", "Vio", "Gray", "Dan", "Mave", "Jay", "Jes", "Gin", "On", "Damn", "Bike"};
+        string[] givenSeconds = { "nan", "son", "n", "e", "ly", "on", "ah", "ma", "ce", "bella", "let", "iel", "son", "rick", "den", "us", "g", "ix", "r" };
+
+        //{ "Dorby", "Billmie", "Grundson", "Damn", "Blant", "Forson", "Biker", "Lorz" };
+
+        string[] lastFirsts = { "Yorg", "Walt", "Rehy", "Mill", "Ander", "Thomp", "King", "Walker", "Mc", "Mac", "Smir", "Dav", "John", "Wil", "Martin", "Hernand", "Lop", "Pop", "Volk" };
+        string[] lastSeconds = { "illiams", "meyer", "son", "er", "nix", "ly", "-Bling", "-Walker", "Beth", "Gyver", "nov", "is", "ez", "ov"};
+            
+            //{ "McSleeve", "Grunderson", "Raucous", "Blastronaut", "Ramrod", "Cussing" };
+
+        string first = givenFirsts[UnityEngine.Random.Range(0, givenFirsts.Length)] + givenSeconds[UnityEngine.Random.Range(0, givenSeconds.Length)];
+        string last = lastFirsts[UnityEngine.Random.Range(0, givenFirsts.Length)] + lastSeconds[UnityEngine.Random.Range(0, lastSeconds.Length)];
 
         return first + " " + last;
     }

@@ -46,6 +46,7 @@ public class EnemyBuilding : MonoBehaviour
             //Debug.Log("My floors: " + numFloors + ", Tank Floors: " + (enemyManager.deptManager.newDeptIndex + 1));
             if(numFloors < (enemyManager.deptManager.newDeptIndex + 2))
             {
+                CameraShake.Instance.StartShake(0.3f, .03f);
                 DestroyBuilding();
             }
         }
@@ -56,8 +57,8 @@ public class EnemyBuilding : MonoBehaviour
         destroyed = true;
         destroybuilding.Play();
 
-        CameraShake.Instance.StartShake(0.3f, .01f);
-        enemyManager.resumes.TryAddPagesToStack(employeesInBuilding);
+        
+        
 
         foreach (Animator a in GetComponentsInChildren<Animator>())
         {
@@ -76,8 +77,9 @@ public class EnemyBuilding : MonoBehaviour
 
     private IEnumerator Die()
     {
-        yield return new WaitForSeconds(4);
-        
+        yield return new WaitForSeconds(3);
+
+        enemyManager.resumes.TryAddPagesToStack(employeesInBuilding);
         Destroy(gameObject);
     }
 }
