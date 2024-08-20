@@ -34,7 +34,7 @@ public class EnemyBuilding : MonoBehaviour
     {
         for(int i = 0; i < numFloors; i++)
         {
-            int numEmployeesThisFloor = Random.Range(1, 7);
+            int numEmployeesThisFloor = Random.Range(1, 3);
             employeesInBuilding += numEmployeesThisFloor;
         }
     }
