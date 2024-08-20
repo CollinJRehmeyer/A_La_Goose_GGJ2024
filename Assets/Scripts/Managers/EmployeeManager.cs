@@ -2,6 +2,7 @@ using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,6 +33,10 @@ public class EmployeeManager : MonoBehaviour
     public DeskButton startProjectButton;
     public SpriteRenderer employeeOfficeSprite;
 
+    public GameObject confetti;
+
+    public StudioEventEmitter confettiSound;
+
 
     public float totalProd;
     public int totalProjectsCompleted = 0;
@@ -60,6 +65,8 @@ public class EmployeeManager : MonoBehaviour
 
     public float fireAnimDelay;
     public float fireRealDelay;
+
+    public int completedProjects = 0;
 
     private void Start()
     {
@@ -202,8 +209,7 @@ public class EmployeeManager : MonoBehaviour
     {
         if (selectedEmployee != -1)
         {
-            Debug.Log("Dismissed");
-            employeeButtons[selectedEmployee].GetComponent<EmployeeButton>().DismissEmployeeFromOffice();
+            StartCoroutine(confettiStop());
         }
         else
         {
@@ -330,6 +336,7 @@ public class EmployeeManager : MonoBehaviour
         deptManager.tankMoving = false;
         FMOD.Studio.EventInstance musicEvent = GameObject.Find("Music").GetComponent<StudioEventEmitter>().EventInstance;
         musicEvent.setPaused(true);
+        completedProjects++;
 
         foreach(EnemyBuilding eb in FindObjectsOfType<EnemyBuilding>())
         {
@@ -361,6 +368,19 @@ public class EmployeeManager : MonoBehaviour
             }
             
         }
+    }
+
+    public IEnumerator confettiStop()
+    {
+        //Debug.Log("Dismissed");
+        confetti.SetActive(true);
+        confettiSound.Play();
+        yield return new WaitForSeconds(4);
+
+        employeeButtons[selectedEmployee].GetComponent<EmployeeButton>().DismissEmployeeFromOffice();
+
+        yield return new WaitForSeconds(10);
+        confetti.SetActive(false);
     }
 
     public float CalculateCost() 
