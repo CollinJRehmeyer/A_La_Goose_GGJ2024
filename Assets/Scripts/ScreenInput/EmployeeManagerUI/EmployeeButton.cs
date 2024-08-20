@@ -14,6 +14,8 @@ public class EmployeeButton : MonoBehaviour
     public EmployeeManager manager;
     public GameObject walkingSprite;
     public StudioEventEmitter elevator;
+
+    public StudioEventEmitter click;
      
 
     private void Start()
@@ -41,6 +43,7 @@ public class EmployeeButton : MonoBehaviour
     {
         if (manager.selectedEmployee == -1)
         {
+            click.Play();
             if (EmployeeInspectWidget.Instance.selectedEmployee == employee)
             {
                 manager.selectedEmployee = manager.employees.IndexOf(employee);
@@ -86,6 +89,7 @@ public class EmployeeButton : MonoBehaviour
         GameObject.Find("Doors").GetComponent<Animator>().SetTrigger("open");
         elevator = GameObject.Find("Doors").GetComponent <StudioEventEmitter>();
         elevator.Play();
+        /////////////////////////////////////////////////////////////////
         walkingSprite.GetComponent<SpriteRenderer>().enabled = false;
         manager.SetEmployeeOfficeSprite(employee.employeeSprite);
     }

@@ -1,3 +1,4 @@
+using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,6 +22,10 @@ public class EmployeeManager : MonoBehaviour
     public EmployeeInspectWidget employeeInspectWidget;
 
     public Animator elevator;
+
+    public StudioEventEmitter fireEmployee;
+    public StudioEventEmitter payEmployeeSound;
+    public StudioEventEmitter makeMoneySound;
 
     public DeskButton fireButton;
     public DeskButton dismissButton;
@@ -54,6 +59,7 @@ public class EmployeeManager : MonoBehaviour
     public int selectedEmployee;
 
     public float fireAnimDelay;
+    public float fireRealDelay;
 
     private void Start()
     {
@@ -277,14 +283,19 @@ public class EmployeeManager : MonoBehaviour
     private IEnumerator FireEmployeeFromCannon()
     {
         yield return new WaitForSeconds(fireAnimDelay);
-
+        fireEmployee.Play();
         deptManager.companyHead.GetComponent<Animator>().SetTrigger("shoot");
+
+        //real world sound
+        yield return new WaitForSeconds(fireRealDelay);
+        CameraShake.Instance.StartShake(1.6f, 0.2f);
     }
 
     public void PayEmployeeSalaries()
     {
         foreach (Employee e in employees)
         {
+            payEmployeeSound.Play();
             totalValue -= e.salary;
         }
     }
@@ -300,6 +311,9 @@ public class EmployeeManager : MonoBehaviour
     }
     private void ShipProduct()
     {
+        makeMoneySound.Play();
+
+
         totalValue += prodReward;
         totalProjectsCompleted++;
         foreach (Employee e in employees)
