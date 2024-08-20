@@ -9,6 +9,7 @@ public class DepartmentManager : MonoBehaviour
     public int employeesPerFloor;
     public int maxEmployees = 6;
 
+    public float costToUpgrade;
 
 
     public bool tankMoving;
@@ -47,13 +48,23 @@ public class DepartmentManager : MonoBehaviour
                 trd.GetComponent<Animator>().SetBool("isMoving", false);
             }
         }
+
+        if(employeeManager.totalValue >= costToUpgrade)
+        {
+            acquireDeptButton.SetButtonActive(true);
+        }
+        else
+        {
+            acquireDeptButton.SetButtonActive(false);
+        }
     }
 
 
     public void AcquireNewDepartment()
     {
-        if (newDeptIndex < departmentObjs.Length)
+        if (newDeptIndex < departmentObjs.Length && employeeManager.totalValue >= costToUpgrade)
         {
+            employeeManager.totalValue -= costToUpgrade;
             companyHead.GetComponent<Animator>().SetTrigger("department");
             StartCoroutine(AcquiringDept());
         }

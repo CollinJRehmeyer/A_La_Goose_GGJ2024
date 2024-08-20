@@ -48,6 +48,24 @@ public class EnemyBuilding : MonoBehaviour
     public void DestroyBuilding()
     {
         enemyManager.resumes.TryAddPagesToStack(employeesInBuilding);
+
+        foreach (Animator a in GetComponentsInChildren<Animator>())
+        {
+            a.SetTrigger("falling");
+            Fall();
+        }
+    }
+
+    public void Fall()
+    {
+        moveDir = Vector3.down - Vector3.right;
+        speed *= 2;
+        StartCoroutine(Die()); 
+    }
+
+    private IEnumerator Die()
+    {
+        yield return new WaitForSeconds(4);
         Destroy(gameObject);
     }
 }
