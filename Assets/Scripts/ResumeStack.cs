@@ -41,15 +41,15 @@ public class ResumeStack : MonoBehaviour
     void Start()
     {
         TryAddPagesToStack(startingPages);
+        foreach(ResumePage page in pages)
+        {
+            page.employee.morale = 2.5f;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.A))
-        //{
-        //    TryAddPagesToStack(1);
-        //}
         if (canAdd)
         {
             AddPagesFromQueue();
