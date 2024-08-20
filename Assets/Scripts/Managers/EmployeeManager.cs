@@ -61,6 +61,9 @@ public class EmployeeManager : MonoBehaviour
     public float fireAnimDelay;
     public float fireRealDelay;
 
+    public GameObject inTheRedAlarm;
+    public GameObject computerScreen;
+
     private void Start()
     {
         PopulateEmployeeList();
@@ -78,7 +81,15 @@ public class EmployeeManager : MonoBehaviour
 
     private void Update()
     {
-
+        if(totalValue < 0 && !inTheRedAlarm.activeInHierarchy)
+        {
+            inTheRedAlarm.SetActive(true);
+            inTheRedAlarm.GetComponent<StudioEventEmitter>().Play();
+        }
+        else if(totalValue > 0 && inTheRedAlarm.activeInHierarchy)
+        {
+            inTheRedAlarm.SetActive(false);
+        }
 
         if (fire)
         {
@@ -308,10 +319,17 @@ public class EmployeeManager : MonoBehaviour
 
     public void PayEmployeeSalaries()
     {
-        foreach (Employee e in employees)
+        if(totalValue > 0)
         {
-            payEmployeeSound.Play();
-            totalValue -= e.salary;
+            foreach (Employee e in employees)
+            {
+                payEmployeeSound.Play();
+                totalValue -= e.salary;
+            }
+        }
+        else
+        {
+            StartCoroutine(Lose());
         }
     }
 
@@ -400,5 +418,16 @@ public class EmployeeManager : MonoBehaviour
         {
             return 0;
         }
+    }
+
+    private IEnumerator Lose()
+    {
+        deptManager.companyHead.GetComponent<Animator>().SetTrigger("dead");
+        fireButton.SetButtonActive(false);
+        dismissButton.SetButtonActive(false);
+        startProjectButton.SetButtonActive(false);
+
+        yield return new WaitForSeconds(5);
+        computerScreen.SetActive(false);
     }
 }
