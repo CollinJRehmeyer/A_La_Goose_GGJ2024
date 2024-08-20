@@ -30,9 +30,9 @@ public class ResumePage : MonoBehaviour
         {
             headshotRenderer.sprite = employee.employeeSprite;
             nameText.text = employee.name;
-            prodText.text = "Prod: " + employee.productivity.ToString("F1");
-            salText.text = "Sal: " + employee.salary.ToString("F1");
-            passionText.text = "Pass: " + employee.passion.ToString("F1");
+            prodText.text = employee.productivity.ToString("F1");
+            salText.text = "$" + employee.salary.ToString("F2");
+            passionText.text = employee.passion.ToString("F1");
         }
         else
         {

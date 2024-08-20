@@ -54,8 +54,8 @@ MonoBehaviour:
   newDeptIndex: 0
   employeesPerFloor: 3
   maxEmployees: 0
-  costToUpgrade: 0
-  tankMoving: 1
+  costToUpgrade: 10000
+  tankMoving: 0
   companyHead: {fileID: 0}
   companyTreads:
   - {fileID: 0}
