@@ -114,7 +114,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638596040069577514
+  lastModified: 638596163432666549
   FileSizes:
   - Name: Desktop
     Value: 31584
@@ -506,12 +506,13 @@ MonoBehaviour:
   - {fileID: -4741543019491248061}
   - {fileID: -6717197845590236599}
   - {fileID: 2035181821933260373}
+  - {fileID: 919370308056743213}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8270341587389453454}
   StringsBanks:
   - {fileID: 815529047274646714}
-  cacheTime: 638596230455356552
+  cacheTime: 638596672055140669
   cacheVersion: 131619
 --- !u!114 &815529047274646714
 MonoBehaviour:
@@ -528,11 +529,38 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638596230454379169
+  lastModified: 638596240930995950
   FileSizes:
   - Name: Desktop
-    Value: 2692
+    Value: 2748
   Exists: 1
+--- !u!114 &919370308056743213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Promotion Sound
+  m_EditorClassIdentifier: 
+  Path: event:/Promotion Sound
+  Guid:
+    Data1: 568324028
+    Data2: 1087859746
+    Data3: 1446547862
+    Data4: -2008172816
+  Banks:
+  - {fileID: 2159605530403505793}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1357
 --- !u!114 &1489859014314752287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,10 +657,10 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Sounds.bank
   Name: Sounds
   StudioPath: bank:/Sounds
-  lastModified: 638596230455356552
+  lastModified: 638596672055140669
   FileSizes:
   - Name: Desktop
-    Value: 9002304
+    Value: 9003392
   Exists: 1
 --- !u!114 &2492738901201882247
 MonoBehaviour:
