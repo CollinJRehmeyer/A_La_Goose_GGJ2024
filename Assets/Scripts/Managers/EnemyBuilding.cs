@@ -13,11 +13,14 @@ public class EnemyBuilding : MonoBehaviour
     public float speed;
     public Vector3 moveDir;
 
+    public bool destroyed;
+
     public StudioEventEmitter destroybuilding;
 
     void Start()
     {
         moveDir = transform.right * -1;
+        destroybuilding = GetComponent<StudioEventEmitter>();
     }
 
     // Update is called once per frame
@@ -50,9 +53,10 @@ public class EnemyBuilding : MonoBehaviour
 
     public void DestroyBuilding()
     {
-
+        destroyed = true;
         destroybuilding.Play();
 
+        CameraShake.Instance.StartShake(0.3f, .01f);
         enemyManager.resumes.TryAddPagesToStack(employeesInBuilding);
 
         foreach (Animator a in GetComponentsInChildren<Animator>())
@@ -65,14 +69,15 @@ public class EnemyBuilding : MonoBehaviour
 
     public void Fall()
     {
-        moveDir = Vector3.down - Vector3.right;
-        speed *= 2;
+        moveDir = Vector3.down;
+        speed =.03f;
         StartCoroutine(Die()); 
     }
 
     private IEnumerator Die()
     {
         yield return new WaitForSeconds(4);
+        
         Destroy(gameObject);
     }
 }

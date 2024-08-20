@@ -32,7 +32,11 @@ public class EnemyManager : MonoBehaviour
             currentBuilding = GenerateEnemyBuilding();
         }
 
-        timer += Time.deltaTime;
+        if(deptManager.tankMoving)
+        {
+            timer += Time.deltaTime;
+        }
+
     }
 
     public GameObject GenerateEnemyBuilding()

@@ -22,8 +22,7 @@ public class BackgroundScrollManager : MonoBehaviour
         {
             Destroy(this);
         }
-                   
-        speedMultipliers = new float[bgsToScroll.Count];
+
     }
 
     private void Update()
