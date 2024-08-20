@@ -35,7 +35,8 @@ public class DeskButton : MonoBehaviour
             activatedMaterial = buttonMesh.material;
         }
         SetButtonActive(canPress);
-           
+        onButtonPress = new UnityEvent();
+        click = GetComponent<StudioEventEmitter>();
     }
 
     // Update is called once per frame
