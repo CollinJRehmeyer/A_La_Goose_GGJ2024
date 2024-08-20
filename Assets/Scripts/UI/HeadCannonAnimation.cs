@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class HeadCannonAnimation : MonoBehaviour
 {
     public GameObject muzzleFlash;
     public UnityEvent cannonFired;
+    public StudioEventEmitter shootInGame;
 
     private void Awake()
     {
@@ -15,8 +17,10 @@ public class HeadCannonAnimation : MonoBehaviour
 
     public void EnableGO()
     {
+        shootInGame.Play();
+
         muzzleFlash.SetActive(true);
-        CameraShake.Instance.StartShake(.5f, 0.05f);
+        //CameraShake.Instance.StartShake(.5f, 0.05f);
         cannonFired.Invoke();
     }
 }

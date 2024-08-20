@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class EnemyBuilding : MonoBehaviour
     public int numFloors;
     public float speed;
     public Vector3 moveDir;
+
+    public StudioEventEmitter destroybuilding;
 
     void Start()
     {
@@ -47,12 +50,16 @@ public class EnemyBuilding : MonoBehaviour
 
     public void DestroyBuilding()
     {
+
+        destroybuilding.Play();
+
         enemyManager.resumes.TryAddPagesToStack(employeesInBuilding);
 
         foreach (Animator a in GetComponentsInChildren<Animator>())
         {
             a.SetTrigger("falling");
             Fall();
+ 
         }
     }
 
