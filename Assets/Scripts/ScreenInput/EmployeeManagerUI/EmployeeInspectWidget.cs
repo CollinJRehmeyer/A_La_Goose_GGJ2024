@@ -52,7 +52,7 @@ public class EmployeeInspectWidget : MonoBehaviour
         {
             employeeSpriteRenderer.sprite = selectedEmployee.employeeSprite;
             salaryText.text = "$" + selectedEmployee.salary.ToString("F2");
-            prodText.text = selectedEmployee.salary.ToString("F2") + "/" + selectedEmployee.maxProductivity.ToString("F0");
+            prodText.text = selectedEmployee.productivity.ToString("F2") + "/" + selectedEmployee.maxProductivity.ToString("F0");
             moraleText.text = selectedEmployee.morale.ToString("F0") + "/" + "6";
             friendText.text = selectedEmployee.likeability.ToString("F0") + "/" + selectedEmployee.maxLikeability.ToString("F0");
             shippedText.text = selectedEmployee.successfulShips.ToString();
