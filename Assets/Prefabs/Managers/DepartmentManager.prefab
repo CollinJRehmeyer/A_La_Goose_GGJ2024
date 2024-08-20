@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2626513291654951221}
   - component: {fileID: 1430709263598188758}
+  - component: {fileID: 3268961122606136829}
+  - component: {fileID: 230438976015806646}
   m_Layer: 0
   m_Name: DepartmentManager
   m_TagString: Untagged
@@ -25,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007561588959198622}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.4169407, y: 3.434639, z: 6.2951202}
   m_LocalScale: {x: 3.6605, y: 3.6605, z: 3.6605}
   m_ConstrainProportionsScale: 0
@@ -52,6 +54,7 @@ MonoBehaviour:
   newDeptIndex: 0
   employeesPerFloor: 3
   maxEmployees: 0
+  costToUpgrade: 0
   tankMoving: 1
   companyHead: {fileID: 0}
   companyTreads:
@@ -59,3 +62,67 @@ MonoBehaviour:
   - {fileID: 0}
   employeeManager: {fileID: 0}
   acquireDeptButton: {fileID: 0}
+  deptRealSound: {fileID: 3268961122606136829}
+  deptFakeSound: {fileID: 230438976015806646}
+--- !u!114 &3268961122606136829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007561588959198622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1208197979
+      Data2: 1180710779
+      Data3: -198258771
+      Data4: 2130946238
+    Path: event:/Build Department
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &230438976015806646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007561588959198622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -2028783898
+      Data2: 1210078912
+      Data3: -1912248144
+      Data4: -90268748
+    Path: event:/Build Department in game
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

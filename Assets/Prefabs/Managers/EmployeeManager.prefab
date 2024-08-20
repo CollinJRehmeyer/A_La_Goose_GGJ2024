@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 7380982429961605497}
   - component: {fileID: 8464649454348478632}
   - component: {fileID: 5835171263857982246}
+  - component: {fileID: 8699211452893205210}
+  - component: {fileID: 838013266678042395}
+  - component: {fileID: 8327732993347445475}
   m_Layer: 0
   m_Name: EmployeeManager
   m_TagString: Untagged
@@ -120,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   employees: []
   employeeButtons: []
+  deptManager: {fileID: 0}
   employeeSprites:
   - {fileID: -99092148, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
   - {fileID: -1253333261, guid: 4e398e27c974ec740bbf3451b05894fd, type: 3}
@@ -154,7 +158,11 @@ MonoBehaviour:
   employeeGrid: {fileID: 0}
   employeeBtnPrefab: {fileID: 3412331278518488344, guid: 3f1e293b133f1064a904dac50f9a0bca, type: 3}
   elevatorMarker: {fileID: 0}
+  employeeInspectWidget: {fileID: 0}
   elevator: {fileID: 0}
+  fireEmployee: {fileID: 8699211452893205210}
+  payEmployeeSound: {fileID: 838013266678042395}
+  makeMoneySound: {fileID: 8327732993347445475}
   fireButton: {fileID: 0}
   dismissButton: {fileID: 0}
   startProjectButton: {fileID: 0}
@@ -179,3 +187,98 @@ MonoBehaviour:
   hire: 0
   isWorkingOnProject: 0
   selectedEmployee: -1
+  fireAnimDelay: 0
+  fireRealDelay: 5.65
+--- !u!114 &8699211452893205210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559445689097478501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1875919360
+      Data2: 1217812956
+      Data3: -248631393
+      Data4: 1214426393
+    Path: event:/Elevator to Cannon
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &838013266678042395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559445689097478501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -568866844
+      Data2: 1275406525
+      Data3: -373770835
+      Data4: 273232293
+    Path: event:/Pay Employees
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &8327732993347445475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559445689097478501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -520530717
+      Data2: 1242123186
+      Data3: -1960481905
+      Data4: -355251506
+    Path: event:/Production Income
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

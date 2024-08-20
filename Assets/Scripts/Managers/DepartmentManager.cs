@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,9 @@ public class DepartmentManager : MonoBehaviour
 
     public EmployeeManager employeeManager;
     public DeskButton acquireDeptButton;
+
+    public StudioEventEmitter deptRealSound;
+    public StudioEventEmitter deptFakeSound;
 
 
     private void Start()
@@ -67,6 +71,10 @@ public class DepartmentManager : MonoBehaviour
             employeeManager.totalValue -= costToUpgrade;
             companyHead.GetComponent<Animator>().SetTrigger("department");
             StartCoroutine(AcquiringDept());
+
+            deptFakeSound.Play();
+            deptRealSound.Play();
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
         }
     }
 
