@@ -22,13 +22,5 @@ public class CompanyViewScroll : MonoBehaviour
         {
             uiToScroll.transform.position += uiToScroll.transform.up * -0.01f;
         }
-        if (Input.GetKey(KeyCode.A))
-        {
-            uiToScroll.transform.position += uiToScroll.transform.right * -0.01f;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            uiToScroll.transform.position += uiToScroll.transform.right * 0.01f;
-        }
     }
 }
