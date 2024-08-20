@@ -256,6 +256,9 @@ public class EmployeeManager : MonoBehaviour
             BackgroundScrollManager.instance.baseSpeed = 0.5f;
             deptManager.tankMoving = true;
 
+            FMOD.Studio.EventInstance musicEvent = GameObject.Find("Music").GetComponent<StudioEventEmitter>().EventInstance;
+            musicEvent.setPaused(false);
+
             foreach (EnemyBuilding eb in FindObjectsOfType<EnemyBuilding>())
             {
                 eb.speed = 0.01f;
@@ -322,6 +325,8 @@ public class EmployeeManager : MonoBehaviour
     {
         BackgroundScrollManager.instance.baseSpeed = 0f;
         deptManager.tankMoving = false;
+        FMOD.Studio.EventInstance musicEvent = GameObject.Find("Music").GetComponent<StudioEventEmitter>().EventInstance;
+        musicEvent.setPaused(true);
 
         foreach(EnemyBuilding eb in FindObjectsOfType<EnemyBuilding>())
         {
