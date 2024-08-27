@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: -2170254666289749588}
   - component: {fileID: 8336143409158949600}
   - component: {fileID: -4157001202956030521}
+  - component: {fileID: -2258701104843474968}
   m_Layer: 0
   m_Name: GreenBuilding
   m_TagString: Untagged
@@ -400,7 +401,9 @@ MonoBehaviour:
   numFloors: 0
   speed: 0.01
   moveDir: {x: 0, y: 0, z: 0}
-  destroybuilding: {fileID: 0}
+  destroyed: 0
+  destroybuilding: {fileID: -4157001202956030521}
+  destroybuildingReal: {fileID: -2258701104843474968}
 --- !u!54 &8336143409158949600
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -448,6 +451,37 @@ MonoBehaviour:
       Data3: 954584488
       Data4: -9231154
     Path: event:/Destroy Large Building Game
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &-2258701104843474968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4112930115885591103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 391278516
+      Data2: 1287508108
+      Data3: -965702211
+      Data4: 1479819343
+    Path: event:/Destroy Large Building Real
   Event: 
   PlayEvent: 0
   StopEvent: 0

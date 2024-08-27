@@ -69,6 +69,8 @@ public class DepartmentManager : MonoBehaviour
         if (newDeptIndex < departmentObjs.Length && employeeManager.totalValue >= costToUpgrade)
         {
             employeeManager.totalValue -= costToUpgrade;
+            costToUpgrade += costToUpgrade;
+
             companyHead.GetComponent<Animator>().SetTrigger("department");
             StartCoroutine(AcquiringDept());
 

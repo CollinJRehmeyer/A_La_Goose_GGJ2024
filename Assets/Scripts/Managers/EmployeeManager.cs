@@ -48,7 +48,7 @@ public class EmployeeManager : MonoBehaviour
     public float totalProd;
     public int totalProjectsCompleted = 0;
     public float prodGoal = 100;
-    private float startingProdGoal;
+    private float startingProdGoal = 150;
     public float prodReward = 1;
     private float startingProdReward;
     public int completedProjectsBeforeRewardIncrease;
@@ -230,7 +230,8 @@ public class EmployeeManager : MonoBehaviour
             StartCoroutine(confettiStop());
             Employee e = employees[selectedEmployee];
             e.salary *= 1.2f;
-            e.morale += e.passion;
+            //e.morale += e.passion;
+            e.morale = 5;
             speechBubble.gameObject.SetActive(false);
 
         }
@@ -299,20 +300,22 @@ public class EmployeeManager : MonoBehaviour
 
 
             isWorkingOnProject = true;
-            float projectIncreaseFactor = Mathf.Floor(totalProjectsCompleted / completedProjectsBeforeRewardIncrease);
+            float projectIncreaseFactor = Mathf.Floor(totalProjectsCompleted / completedProjectsBeforeRewardIncrease) * 1.5f;
             print("project increase factor: " + projectIncreaseFactor);
             prodGoal =  startingProdGoal + projectIncreaseFactor * startingProdGoal;
             prodReward = startingProdReward + projectIncreaseFactor * startingProdReward;
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        if (avgMorale < 0.5f && employees.Count > 0)
+        if (avgMorale < 0.9f && employees.Count > 0)
         {
             StartCoroutine(Lose());
+            StartCoroutine(speechMoraleDown());
         }
 
-        if (avgMorale > 4.5f && employees.Count > 0)
+        if (avgMorale > 4.1f && employees.Count > 0)
         {
             StartCoroutine(Lose());
+            StartCoroutine(speechMoraleUp());
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
@@ -355,6 +358,7 @@ public class EmployeeManager : MonoBehaviour
             if(!gameLost)
             {
                 StartCoroutine(Lose());
+                StartCoroutine(speechNoMoney());
             }
             return;
         }
@@ -458,7 +462,7 @@ public class EmployeeManager : MonoBehaviour
                 totalMorale += e.morale;
             }
 
-            return (totalMorale / employees.Count);
+            return ((totalMorale +2.5f) / (employees.Count +1));
         }
         else
         {
@@ -484,6 +488,30 @@ public class EmployeeManager : MonoBehaviour
 
         GameObject.Find("Doors").GetComponent<Animator>().SetTrigger("open");
 
+
+    }
+
+    public IEnumerator speechMoraleUp()
+    {
+        yield return new WaitForSeconds(3);
+        speechBubble.gameObject.SetActive(true);
+        speechBubble.SetQuip("Your employees have.. UNIONIZED");
+        
+    }
+
+    public IEnumerator speechMoraleDown()
+    {
+        yield return new WaitForSeconds(3);
+        speechBubble.gameObject.SetActive(true);
+        speechBubble.SetQuip("Your employees have rioted");
+
+    }
+
+    public IEnumerator speechNoMoney()
+    {
+        yield return new WaitForSeconds(3);
+        speechBubble.gameObject.SetActive(true);
+        speechBubble.SetQuip("You have committed the sin of being BROKE");
 
     }
 }

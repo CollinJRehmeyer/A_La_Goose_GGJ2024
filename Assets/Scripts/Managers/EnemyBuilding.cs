@@ -16,6 +16,7 @@ public class EnemyBuilding : MonoBehaviour
     public bool destroyed;
 
     public StudioEventEmitter destroybuilding;
+    public StudioEventEmitter destroybuildingReal;
 
     void Start()
     {
@@ -46,7 +47,7 @@ public class EnemyBuilding : MonoBehaviour
             //Debug.Log("My floors: " + numFloors + ", Tank Floors: " + (enemyManager.deptManager.newDeptIndex + 1));
             if(numFloors < (enemyManager.deptManager.newDeptIndex + 2))
             {
-                CameraShake.Instance.StartShake(0.3f, .03f);
+                StartCoroutine(realWorldDestroy());
                 DestroyBuilding();
             }
         }
@@ -81,5 +82,12 @@ public class EnemyBuilding : MonoBehaviour
 
         enemyManager.resumes.TryAddPagesToStack(employeesInBuilding);
         Destroy(gameObject);
+    }
+
+    public IEnumerator realWorldDestroy()
+    {
+        yield return new WaitForSeconds(1.5f);
+        CameraShake.Instance.StartShake(0.3f, .03f);
+        destroybuildingReal.Play();
     }
 }
